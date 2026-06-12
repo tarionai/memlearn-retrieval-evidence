@@ -22,17 +22,19 @@ The files under `packet/results/` additionally verify against the packet's own
 `packet/results/SHA256SUMS.txt` (checked at assembly time). Internal work-package
 references retained in docstrings are a deliberate publish decision — see README.
 
-This manifest lists every file except itself and `.git/` internals.
+This manifest lists every tracked file except itself.
 
 | File | Origin | SHA-256 |
 |---|---|---|
+| `.gitattributes` | authored-for-this-repo | `fe4cf7c3ac3734d0ef99976cf8015055fde9bc0b3766e3fc2d0c13793d4d4401` |
 | `.github/workflows/tests.yml` | authored-for-this-repo | `41e5f38cb0c276f812b25bdb11b14191a71dbcd6aa6bbf4154d7d27dfef0f4ba` |
-| `.gitignore` | authored-for-this-repo | `ba571e8dae6e01180f3f3d8045f175f1670d22df5f19c3194687179837c1c6cc` |
+| `.gitignore` | authored-for-this-repo | `971b55df271877cbc7b6581a618b07d4d9ab303cc6a4e0b0b8c4ac2ef3f89c5b` |
+| `LICENSE` | authored-for-this-repo | `cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30` |
+| `README.md` | authored-for-this-repo | `9dbbd2e99265d38f58717fe43aa9a6f266b1e56d31982c9055233794b7d3091f` |
 | `benchmarks/__init__.py` | byte-identical-to-origin | `e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855` |
 | `benchmarks/retrieval_ablation/__init__.py` | byte-identical-to-origin | `e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855` |
 | `benchmarks/retrieval_ablation/metrics.py` | byte-identical-to-origin | `0e924cb73841ac8949e1a4e3dac28ac60c40bdc1bbe47efa4a927c8a9e65de21` |
 | `benchmarks/retrieval_ablation/tournament_base.py` | public-slice | `08279d06f0bc74e63f475d15e30562a04bf7bebe5743423f8895a31a857c9dc5` |
-| `LICENSE` | authored-for-this-repo | `cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30` |
 | `packet/DATASET.md` | byte-identical-to-origin | `9df0e953aca07bd348ed86bed804f3f459c4c6f59aa9289291180127f59cf068` |
 | `packet/ENVIRONMENT.md` | byte-identical-to-origin | `544e6e4eb6b441ba486b8840a2f64842fc293644182a35a50d8f94575b991c34` |
 | `packet/EVAL_CONTRACT.md` | byte-identical-to-origin | `ce8ed78697c6546cb744eb900aaeffbbb55239cb3058c5367fbe8a4ba62fde09` |
@@ -41,6 +43,7 @@ This manifest lists every file except itself and `.git/` internals.
 | `packet/README.md` | byte-identical-to-origin | `91bf31c5ce1aee243cedbf9339e73801bfc0a3fda6f105b4a44b924281fcf2e1` |
 | `packet/REPRODUCE.md` | byte-identical-to-origin | `aec0ff7e626dfebe73788853f91fd4d4aa4ecda2c910dc2723ab6e8828425a7f` |
 | `packet/requirements.lock.txt` | byte-identical-to-origin | `d2d710aa848202fd16ca17135abcadb9f6e2c243448e92dc3c81bef6d3a2b65e` |
+| `packet/results/SHA256SUMS.txt` | byte-identical-to-origin | `1636fba81a9f7cc0b0171251db7b8104de1ee2cd10c76da168933c4c0f6c247a` |
 | `packet/results/hybrid_retrieval_findings_20260605.md` | byte-identical-to-origin | `2fee7ffe6c8f9bc88721a76e537fd0ad64e70f3795f1c5ba0aa6455b20b53fe7` |
 | `packet/results/longmemeval_design_decisions.md` | byte-identical-to-origin | `2346265cd12e0bf1747be2462cba2c30f8c156f9f70e0f8befae137899ce7b98` |
 | `packet/results/longmemeval_s_findings_20260604.md` | byte-identical-to-origin | `3ddfec5f193617cfc0ee7766f9b9b822544b1e686fe24556e78aa71aec6579af` |
@@ -50,9 +53,7 @@ This manifest lists every file except itself and `.git/` internals.
 | `packet/results/osam_selection_postmortem_20260604.md` | byte-identical-to-origin | `6d51d78f38402f8ac92c1b757775c105567298603e1c0658f301eac4275ea7ec` |
 | `packet/results/ppr_arm_findings_20260604.md` | byte-identical-to-origin | `d8d2be8392136354c2f02ae74078efb61ba804e1dc986a65a82f6b657ceabc45` |
 | `packet/results/ppr_arm_results_n200.json` | byte-identical-to-origin | `73e1481e6b56678bd8f2a5b59a2029870a260001b97ac77829ef76faf2acfe8e` |
-| `packet/results/SHA256SUMS.txt` | byte-identical-to-origin | `1636fba81a9f7cc0b0171251db7b8104de1ee2cd10c76da168933c4c0f6c247a` |
 | `pyproject.toml` | authored-for-this-repo | `6a25e7a47eb7e6e0fde33bd415e7ee63e51ae372018d8ffa88e085617b357965` |
-| `README.md` | authored-for-this-repo | `9dbbd2e99265d38f58717fe43aa9a6f266b1e56d31982c9055233794b7d3091f` |
 | `src/memlearn/__init__.py` | byte-identical-to-origin | `d0cab45a830b4d7e87804ed6ab46ca3116194f889cb551a05f231da9f08ba49c` |
 | `src/memlearn/adapters/__init__.py` | byte-identical-to-origin | `e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855` |
 | `src/memlearn/adapters/in_memory/__init__.py` | byte-identical-to-origin | `ec50b22ca594f91e017da0af3766516c8bea328bf9fbf4bb19617cde2112864c` |
@@ -76,6 +77,7 @@ This manifest lists every file except itself and `.git/` internals.
 | `src/validation_mvp/lexical_backends.py` | byte-identical-to-origin | `ea04845038e3620d25d6d49f6700d32c2e8a63e3217cdbd93a052a0276e3e7df` |
 | `src/validation_mvp/ppr_arm.py` | byte-identical-to-origin | `c6fa9caa5b039fe69fdd7661ba98c9f99478105175898de38786c07a65c7b9e7` |
 | `src/validation_mvp/run_longmemeval_retrieval.py` | byte-identical-to-origin | `84235f14856d95d31518347bc3890845dd472e7baee4e5b25b85c7aace33bb55` |
+| `state/intermediate/.gitkeep` | authored-for-this-repo | `e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855` |
 | `tests/__init__.py` | byte-identical-to-origin | `e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855` |
 | `tests/test_ports.py` | byte-identical-to-origin | `9be067dfe02eaaf7d7b4f2e370f0343105939b3809e03abb3b3801f3e410868d` |
 | `tests/test_primitives.py` | byte-identical-to-origin | `e36dd0da6eef1ea217feaba6db70552f810f05b39343c7124de049078b50bfe5` |
