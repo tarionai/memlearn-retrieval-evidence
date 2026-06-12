@@ -1,0 +1,4 @@
+# No line-ending conversion, ever. This repository's integrity story is
+# byte-identity: every file must hash to its MANIFEST.md / SHA256SUMS.txt
+# entry on every platform, so checkout bytes must equal committed bytes.
+* -text
