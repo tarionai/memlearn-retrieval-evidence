@@ -1,7 +1,13 @@
 data/
-state/
 .venv/
 __pycache__/
 *.npz
 *.pyc
 .pytest_cache/
+# The harness writes result JSONs to state/intermediate/ (relative to the
+# repo root) and does not create the directory itself — ship the empty
+# directory, ignore everything written into it.
+state/*
+!state/intermediate/
+state/intermediate/*
+!state/intermediate/.gitkeep
