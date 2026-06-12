@@ -28,9 +28,9 @@ This manifest lists every tracked file except itself.
 |---|---|---|
 | `.gitattributes` | authored-for-this-repo | `fe4cf7c3ac3734d0ef99976cf8015055fde9bc0b3766e3fc2d0c13793d4d4401` |
 | `.github/workflows/tests.yml` | authored-for-this-repo | `41e5f38cb0c276f812b25bdb11b14191a71dbcd6aa6bbf4154d7d27dfef0f4ba` |
-| `.gitignore` | authored-for-this-repo | `971b55df271877cbc7b6581a618b07d4d9ab303cc6a4e0b0b8c4ac2ef3f89c5b` |
+| `.gitignore` | authored-for-this-repo | `da65561049dbd51446a74d9d25444ed6c44a8879ea3b5edc04e1c2e26c45f4a0` |
 | `LICENSE` | authored-for-this-repo | `cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30` |
-| `README.md` | authored-for-this-repo | `9dbbd2e99265d38f58717fe43aa9a6f266b1e56d31982c9055233794b7d3091f` |
+| `README.md` | authored-for-this-repo | `811a8befe7ef590c8ca9c27fb8e8f0526c01439ca1535d1a3daecc23494fca3e` |
 | `benchmarks/__init__.py` | byte-identical-to-origin | `e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855` |
 | `benchmarks/retrieval_ablation/__init__.py` | byte-identical-to-origin | `e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855` |
 | `benchmarks/retrieval_ablation/metrics.py` | byte-identical-to-origin | `0e924cb73841ac8949e1a4e3dac28ac60c40bdc1bbe47efa4a927c8a9e65de21` |

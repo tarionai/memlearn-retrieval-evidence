@@ -2,30 +2,48 @@
 
 **Status: validated implementation — benchmark harness + frozen evidence packet.**
 
-A curated public excerpt of a private memory-retrieval system: its typed contracts, the
-unit tests for those contracts, and a runnable LongMemEval-S benchmark harness that
-reproduces a frozen evaluation packet (bootstrap 95% CIs, two negative findings). It is
-deliberately small. It is not the product — the memory kernel itself stays private — and
-it makes no claim beyond what the packet measures.
+A curated public excerpt of a private memory-retrieval system: its typed contracts,
+contract tests, a frozen LongMemEval-S evidence packet, and a runnable benchmark harness
+for independent protocol-level reproduction. The packet includes bootstrap 95% CIs and
+two negative findings. It is deliberately small. It is not the product — the memory kernel itself stays private — and it makes no claim beyond what the packet measures.
 
 Companion surface: the same packet is served at
 [relevance.tarion.ai](https://relevance.tarion.ai/#benchmark-packet); the SHA-256 hashes
 in [`MANIFEST.md`](MANIFEST.md) tie both copies to identical bytes.
 
+## Key result
+
+Transcribed verbatim from the frozen packet ([`packet/METRICS.md`](packet/METRICS.md));
+every number is measured-on-frozen-benchmark (LongMemEval-S, n=200, seed=99):
+
+| Variant | MRR | Δ MRR vs dense | 95% CI (Δ) | Verdict |
+|---|---|---|---|---|
+| Dense bi-encoder (baseline) | 0.491 | 0.000 | — | baseline |
+| Dense + OSAM rerank (α=0.7) | 0.469 | −0.022 | [−0.038, −0.009] | no lift — rejected |
+| Dense + PPR (graph) | 0.432 | −0.059 | [−0.116, −0.005] | no lift — rejected |
+| Cross-encoder rerank | 0.693 | +0.202 | [+0.144, +0.255] | validated |
+| Hybrid + cross-encoder | 0.715 | +0.225 | [+0.166, +0.281] | validated — best config |
+
+The two negative findings are intentional evidence: the harness rejected both of the
+system's own differentiated mechanisms. LongMemEval-S is the benchmark's published
+"small"-haystack variant (500 records, each ~50 sessions / ~500 turns), not a subset
+created for this evaluation; the n=200 seed=99 sample drawn from it is this packet's
+choice, documented with its sampling rule in [`packet/DATASET.md`](packet/DATASET.md).
+
 ## What this repository proves — and does not prove
 
 **Proves (every number measured-on-frozen-benchmark, LongMemEval-S, n=200, seed=99):**
 
-- A locked evaluation protocol was run honestly: dense baseline MRR 0.491; cross-encoder
+- Results were generated under the documented evaluation contract: dense baseline MRR 0.491; cross-encoder
   rerank Δ +0.202 (95% CI [+0.144, +0.255]); hybrid BM25+dense+cross-encoder Δ +0.225
-  (95% CI [+0.166, +0.281]) — the best configuration, earned by a paired per-query test,
-  not max-picking. Full table: [`packet/METRICS.md`](packet/METRICS.md).
+  (95% CI [+0.166, +0.281]) — the strongest measured configuration; its margin over
+  cross-encoder-alone is supported by a documented paired per-query test (+0.0224,
+  95% CI [+0.0047, +0.0468]). Full table: [`packet/METRICS.md`](packet/METRICS.md).
 - **Two negative findings are reported as final**, not buried: the system's own
   associative-memory rerank (OSAM, Δ −0.022, CI entirely below zero) and a
   personalized-PageRank graph arm (Δ −0.059) both *hurt* retrieval and were rejected.
   Diagnostics: [`packet/NEGATIVE_FINDINGS.md`](packet/NEGATIVE_FINDINGS.md).
-- The typed contracts and service slice shipped here are the real modules the harness ran
-  against, byte-identical to their private originals (verifiable via `MANIFEST.md`).
+- The typed contracts and service slice shipped here are the modules exercised by the published harness. `MANIFEST.md` records their hashes and origin tags so the public evidence slice can be checked for internal consistency and future changes.
 
 **Does not prove:**
 
@@ -63,11 +81,11 @@ has the pinned commands. The n=5 smoke run works from a clone of this repository
 
 ## Layout
 
-This repository mirrors the layout of the private monorepo directory it was excerpted
-from. **The repository root corresponds to the private repo's `apps/mem-learn/`
-directory** — where `packet/REPRODUCE.md` says "relative to the repository's
-`apps/mem-learn/` directory," read "relative to this repository's root." Every command
-in it then works verbatim from the root of a clone.
+**All commands — in this README and in `packet/REPRODUCE.md` — run from the root of a
+clone.** (Provenance note: the tree mirrors the private monorepo directory it was
+excerpted from, so where the frozen `packet/REPRODUCE.md` says "relative to the
+repository's `apps/mem-learn/` directory," that directory corresponds to this
+repository's root.)
 
 ```
 packet/                      frozen evidence packet (verbatim, hash-manifested)
@@ -95,9 +113,17 @@ deliberately does not vendor. The test file itself is unmodified.
 
 Follow [`packet/REPRODUCE.md`](packet/REPRODUCE.md) from the repository root: create a
 venv, `pip install -r packet/requirements.lock.txt`, download the two public dataset
-files it names, then run the n=5 smoke command. Read its "What reproduction does and
-does not establish" section before comparing numbers — the success criterion is each
-arm's sign and CI-excludes-zero verdict, not point-estimate match.
+files it names, then run the level of reproduction you have time for. The three levels
+establish different things — do not conflate them:
+
+| Command | Purpose | Expected result |
+|---|---|---|
+| n=5 smoke run (`REPRODUCE.md` §3) | Verify installation and the execution path from these instructions alone | All arms execute and a result JSON is written; the n=5 numbers are statistical noise by design and validate nothing |
+| n=200 frozen-protocol rerun (`REPRODUCE.md` §4) | Independent protocol-level reproduction of the published evidence | Every sign and CI-excludes-zero verdict in `packet/METRICS.md` matches; point estimates may differ at the margin across dependency builds |
+| `python -m pytest -q` | Validate contracts and deterministic behavior | 204 tests pass (one disclosed deselection) |
+
+Read `REPRODUCE.md`'s "What reproduction does and does not establish" section before
+comparing numbers.
 
 Out of scope here: `REPRODUCE.md`'s optional cross-backend PostgreSQL arm references a
 result artifact this repository does not freeze; the harness flag exists, but that arm

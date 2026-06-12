@@ -1,5 +1,6 @@
 data/
 .venv/
+desktop.ini
 __pycache__/
 *.npz
 *.pyc
