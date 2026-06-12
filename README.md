@@ -104,10 +104,13 @@ pip install pytest numpy
 python -m pytest -q
 ```
 
-204 tests pass. One test inside the byte-identical
-`tests/unit/test_in_memory_adapters.py` is deselected in `pyproject.toml` (with an
-explanatory comment there): it smoke-tests the full memory kernel, which this repository
-deliberately does not vendor. The test file itself is unmodified.
+197 tests pass with only `pytest` and `numpy` installed — no model download, no
+network. Two groups inside the byte-identical `tests/unit/test_in_memory_adapters.py`
+are deselected in `pyproject.toml` (with explanatory comments there): a smoke test of
+the full memory kernel, which this repository deliberately does not vendor, and the
+`SentenceTransformerEmbedder` tests, which require the real embedding model — those run
+under the full benchmark venv (`packet/requirements.lock.txt`) by overriding the
+deselect, as documented in `pyproject.toml`. The test file itself is unmodified.
 
 ## Reproducing the benchmark
 
@@ -120,7 +123,7 @@ establish different things — do not conflate them:
 |---|---|---|
 | n=5 smoke run (`REPRODUCE.md` §3) | Verify installation and the execution path from these instructions alone | All arms execute and a result JSON is written; the n=5 numbers are statistical noise by design and validate nothing |
 | n=200 frozen-protocol rerun (`REPRODUCE.md` §4) | Independent protocol-level reproduction of the published evidence | Every sign and CI-excludes-zero verdict in `packet/METRICS.md` matches; point estimates may differ at the margin across dependency builds |
-| `python -m pytest -q` | Validate contracts and deterministic behavior | 204 tests pass (one disclosed deselection) |
+| `python -m pytest -q` | Validate contracts and deterministic behavior | 197 tests pass, no network (two disclosed deselections — see `pyproject.toml`) |
 
 Read `REPRODUCE.md`'s "What reproduction does and does not establish" section before
 comparing numbers.

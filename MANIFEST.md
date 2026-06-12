@@ -30,7 +30,7 @@ This manifest lists every tracked file except itself.
 | `.github/workflows/tests.yml` | authored-for-this-repo | `41e5f38cb0c276f812b25bdb11b14191a71dbcd6aa6bbf4154d7d27dfef0f4ba` |
 | `.gitignore` | authored-for-this-repo | `da65561049dbd51446a74d9d25444ed6c44a8879ea3b5edc04e1c2e26c45f4a0` |
 | `LICENSE` | authored-for-this-repo | `cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30` |
-| `README.md` | authored-for-this-repo | `811a8befe7ef590c8ca9c27fb8e8f0526c01439ca1535d1a3daecc23494fca3e` |
+| `README.md` | authored-for-this-repo | `a6bd2e40961dd365df116503f2b9ab3a5a8b71adb7844f0a0493a258248ed3f0` |
 | `benchmarks/__init__.py` | byte-identical-to-origin | `e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855` |
 | `benchmarks/retrieval_ablation/__init__.py` | byte-identical-to-origin | `e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855` |
 | `benchmarks/retrieval_ablation/metrics.py` | byte-identical-to-origin | `0e924cb73841ac8949e1a4e3dac28ac60c40bdc1bbe47efa4a927c8a9e65de21` |
@@ -53,7 +53,7 @@ This manifest lists every tracked file except itself.
 | `packet/results/osam_selection_postmortem_20260604.md` | byte-identical-to-origin | `6d51d78f38402f8ac92c1b757775c105567298603e1c0658f301eac4275ea7ec` |
 | `packet/results/ppr_arm_findings_20260604.md` | byte-identical-to-origin | `d8d2be8392136354c2f02ae74078efb61ba804e1dc986a65a82f6b657ceabc45` |
 | `packet/results/ppr_arm_results_n200.json` | byte-identical-to-origin | `73e1481e6b56678bd8f2a5b59a2029870a260001b97ac77829ef76faf2acfe8e` |
-| `pyproject.toml` | authored-for-this-repo | `6a25e7a47eb7e6e0fde33bd415e7ee63e51ae372018d8ffa88e085617b357965` |
+| `pyproject.toml` | authored-for-this-repo | `f07fafb787a8cd7c68aee44e4c848411af4c53f9ba92d9288306331d76f0a971` |
 | `src/memlearn/__init__.py` | byte-identical-to-origin | `d0cab45a830b4d7e87804ed6ab46ca3116194f889cb551a05f231da9f08ba49c` |
 | `src/memlearn/adapters/__init__.py` | byte-identical-to-origin | `e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855` |
 | `src/memlearn/adapters/in_memory/__init__.py` | byte-identical-to-origin | `ec50b22ca594f91e017da0af3766516c8bea328bf9fbf4bb19617cde2112864c` |

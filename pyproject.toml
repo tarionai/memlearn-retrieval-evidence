@@ -6,8 +6,14 @@
 pythonpath = ["src", "."]
 testpaths = ["tests"]
 # tests/unit/test_in_memory_adapters.py ships byte-identical to its private
-# origin. Its one full-kernel smoke test imports memory-kernel modules
-# (admission_gate, semantic_store, consolidator, memory_kernel) that this
-# repository deliberately does not vendor — see MANIFEST.md and README.md.
-# Deselecting it here keeps the test file unmodified.
-addopts = "--deselect tests/unit/test_in_memory_adapters.py::TestProtocolCompliance::test_memory_kernel_in_memory_smoke"
+# origin. Two groups are deselected so the default suite needs only
+# pytest + numpy — no private modules, no model downloads, no network:
+#   - the full-kernel smoke test imports memory-kernel modules
+#     (admission_gate, semantic_store, consolidator, memory_kernel) that
+#     this repository deliberately does not vendor;
+#   - the SentenceTransformerEmbedder tests require sentence-transformers
+#     and download the all-MiniLM-L6-v2 model. They run if you build the
+#     full benchmark venv (packet/requirements.lock.txt) and re-enable
+#     them: pytest --override-ini addopts="" tests/unit/test_in_memory_adapters.py::TestSentenceTransformerEmbedder
+# Deselecting here keeps the test file unmodified — see MANIFEST.md.
+addopts = "--deselect tests/unit/test_in_memory_adapters.py::TestProtocolCompliance::test_memory_kernel_in_memory_smoke --deselect tests/unit/test_in_memory_adapters.py::TestSentenceTransformerEmbedder"
