@@ -1,0 +1,7 @@
+data/
+state/
+.venv/
+__pycache__/
+*.npz
+*.pyc
+.pytest_cache/

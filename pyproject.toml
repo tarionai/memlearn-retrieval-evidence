@@ -1,0 +1,13 @@
+# Test-runner configuration only. This repository is not an installable
+# package — the benchmark harness bootstraps sys.path itself, and the
+# reproduction commands in packet/REPRODUCE.md run from the repo root
+# without any install step beyond packet/requirements.lock.txt.
+[tool.pytest.ini_options]
+pythonpath = ["src", "."]
+testpaths = ["tests"]
+# tests/unit/test_in_memory_adapters.py ships byte-identical to its private
+# origin. Its one full-kernel smoke test imports memory-kernel modules
+# (admission_gate, semantic_store, consolidator, memory_kernel) that this
+# repository deliberately does not vendor — see MANIFEST.md and README.md.
+# Deselecting it here keeps the test file unmodified.
+addopts = "--deselect tests/unit/test_in_memory_adapters.py::TestProtocolCompliance::test_memory_kernel_in_memory_smoke"

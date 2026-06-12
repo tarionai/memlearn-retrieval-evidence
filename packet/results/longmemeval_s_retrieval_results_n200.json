@@ -1,0 +1,1980 @@
+{
+  "dataset": "xiaowu0162/longmemeval-cleaned",
+  "split": "longmemeval_s_cleaned",
+  "mechanism": "osam_simplified_hebbian",
+  "alpha": 0.7,
+  "normalize": true,
+  "pool_k": 50,
+  "subset_n": 200,
+  "bench_seed": 99,
+  "embedding_model": "all-MiniLM-L6-v2",
+  "chunking": "turn_level; precise round-level evidence (oracle has_answer join)",
+  "n_evaluated": 200,
+  "n_excluded_nondegeneracy": 0,
+  "excluded": [],
+  "embeddings_collapsed_total": 453,
+  "chance_mrr": 0.13,
+  "oracle_at_pool_k": 0.955,
+  "dense_ranking_inverted_tripwire": false,
+  "rerank_latency_ms": {
+    "p50": 0.918,
+    "p95": 1.489
+  },
+  "variants": {
+    "chance": {
+      "mrr": 0.13,
+      "ndcg@10": 0.1032,
+      "delta_mrr_vs_dense": -0.3608,
+      "ci95_delta_vs_dense": [
+        -0.4248,
+        -0.3043
+      ],
+      "hit@1": 0.04,
+      "recall@1": 0.0221,
+      "hit@5": 0.16,
+      "recall@5": 0.0946,
+      "hit@10": 0.295,
+      "recall@10": 0.1831
+    },
+    "dense_only": {
+      "mrr": 0.4909,
+      "ndcg@10": 0.5075,
+      "delta_mrr_vs_dense": 0.0,
+      "ci95_delta_vs_dense": [
+        0.0,
+        0.0
+      ],
+      "hit@1": 0.33,
+      "recall@1": 0.2331,
+      "hit@5": 0.69,
+      "recall@5": 0.5336,
+      "hit@10": 0.86,
+      "recall@10": 0.7341
+    },
+    "dense_plus_osam": {
+      "mrr": 0.4686,
+      "ndcg@10": 0.4858,
+      "delta_mrr_vs_dense": -0.0223,
+      "ci95_delta_vs_dense": [
+        -0.0378,
+        -0.0089
+      ],
+      "hit@1": 0.3,
+      "recall@1": 0.2156,
+      "hit@5": 0.66,
+      "recall@5": 0.5067,
+      "hit@10": 0.845,
+      "recall@10": 0.7091
+    },
+    "pure_osam": {
+      "mrr": 0.1157,
+      "ndcg@10": 0.1193,
+      "delta_mrr_vs_dense": -0.3751,
+      "ci95_delta_vs_dense": [
+        -0.437,
+        -0.32
+      ],
+      "hit@1": 0.02,
+      "recall@1": 0.0138,
+      "hit@5": 0.145,
+      "recall@5": 0.0874,
+      "hit@10": 0.38,
+      "recall@10": 0.2673
+    },
+    "cross_encoder": {
+      "mrr": 0.693,
+      "ndcg@10": 0.7018,
+      "delta_mrr_vs_dense": 0.2021,
+      "ci95_delta_vs_dense": [
+        0.1443,
+        0.2549
+      ],
+      "hit@1": 0.555,
+      "recall@1": 0.362,
+      "hit@5": 0.855,
+      "recall@5": 0.7488,
+      "hit@10": 0.915,
+      "recall@10": 0.8528
+    }
+  },
+  "osam_help_hurt_unchanged_vs_dense": {
+    "helped": 31,
+    "hurt": 46,
+    "unchanged": 123
+  },
+  "pure_osam_help_hurt_unchanged_vs_dense": {
+    "helped": 18,
+    "hurt": 168,
+    "unchanged": 14
+  },
+  "osam_recency_buckets": {
+    "0-10": {
+      "n": 5,
+      "dense_mrr": 0.311,
+      "dense_plus_osam_mrr": 0.2265,
+      "helped": 3,
+      "hurt": 1,
+      "unchanged": 1
+    },
+    "11-50": {
+      "n": 38,
+      "dense_mrr": 0.4865,
+      "dense_plus_osam_mrr": 0.4402,
+      "helped": 4,
+      "hurt": 10,
+      "unchanged": 24
+    },
+    "51-200": {
+      "n": 96,
+      "dense_mrr": 0.487,
+      "dense_plus_osam_mrr": 0.4699,
+      "helped": 17,
+      "hurt": 24,
+      "unchanged": 55
+    },
+    "201-inf": {
+      "n": 61,
+      "dense_mrr": 0.5144,
+      "dense_plus_osam_mrr": 0.5042,
+      "helped": 7,
+      "hurt": 11,
+      "unchanged": 43
+    }
+  },
+  "pure_osam_recency_buckets": {
+    "0-10": {
+      "n": 5,
+      "dense_mrr": 0.311,
+      "pure_osam_mrr": 0.2619,
+      "helped": 3,
+      "hurt": 1,
+      "unchanged": 1
+    },
+    "11-50": {
+      "n": 38,
+      "dense_mrr": 0.4865,
+      "pure_osam_mrr": 0.1699,
+      "helped": 5,
+      "hurt": 29,
+      "unchanged": 4
+    },
+    "51-200": {
+      "n": 96,
+      "dense_mrr": 0.487,
+      "pure_osam_mrr": 0.1063,
+      "helped": 5,
+      "hurt": 85,
+      "unchanged": 6
+    },
+    "201-inf": {
+      "n": 61,
+      "dense_mrr": 0.5144,
+      "pure_osam_mrr": 0.0849,
+      "helped": 5,
+      "hurt": 53,
+      "unchanged": 3
+    }
+  },
+  "per_query": [
+    {
+      "record_id": "58bf7951",
+      "qtype": "single-session-user",
+      "recency": 292,
+      "oracle": true,
+      "dense_rr": 0.2,
+      "osam_rr": 0.25,
+      "pure_osam_rr": 0.1111
+    },
+    {
+      "record_id": "c5e8278d",
+      "qtype": "single-session-user",
+      "recency": 87,
+      "oracle": true,
+      "dense_rr": 0.1111,
+      "osam_rr": 0.1429,
+      "pure_osam_rr": 0.0526
+    },
+    {
+      "record_id": "6ade9755",
+      "qtype": "single-session-user",
+      "recency": 7,
+      "oracle": true,
+      "dense_rr": 0.0667,
+      "osam_rr": 0.0909,
+      "pure_osam_rr": 0.1429
+    },
+    {
+      "record_id": "5d3d2817",
+      "qtype": "single-session-user",
+      "recency": 264,
+      "oracle": false,
+      "dense_rr": 0.0,
+      "osam_rr": 0.0,
+      "pure_osam_rr": 0.0
+    },
+    {
+      "record_id": "c960da58",
+      "qtype": "single-session-user",
+      "recency": 465,
+      "oracle": true,
+      "dense_rr": 1.0,
+      "osam_rr": 1.0,
+      "pure_osam_rr": 0.25
+    },
+    {
+      "record_id": "726462e0",
+      "qtype": "single-session-user",
+      "recency": 385,
+      "oracle": true,
+      "dense_rr": 0.0476,
+      "osam_rr": 0.0556,
+      "pure_osam_rr": 0.0625
+    },
+    {
+      "record_id": "ad7109d1",
+      "qtype": "single-session-user",
+      "recency": 290,
+      "oracle": true,
+      "dense_rr": 1.0,
+      "osam_rr": 1.0,
+      "pure_osam_rr": 0.0217
+    },
+    {
+      "record_id": "8ebdbe50",
+      "qtype": "single-session-user",
+      "recency": 82,
+      "oracle": true,
+      "dense_rr": 1.0,
+      "osam_rr": 1.0,
+      "pure_osam_rr": 0.125
+    },
+    {
+      "record_id": "6b168ec8",
+      "qtype": "single-session-user",
+      "recency": 155,
+      "oracle": true,
+      "dense_rr": 0.2,
+      "osam_rr": 0.3333,
+      "pure_osam_rr": 0.0455
+    },
+    {
+      "record_id": "75499fd8",
+      "qtype": "single-session-user",
+      "recency": 246,
+      "oracle": true,
+      "dense_rr": 0.5,
+      "osam_rr": 0.5,
+      "pure_osam_rr": 0.0588
+    },
+    {
+      "record_id": "37d43f65",
+      "qtype": "single-session-user",
+      "recency": 98,
+      "oracle": true,
+      "dense_rr": 0.5,
+      "osam_rr": 0.3333,
+      "pure_osam_rr": 0.0417
+    },
+    {
+      "record_id": "b86304ba",
+      "qtype": "single-session-user",
+      "recency": 15,
+      "oracle": true,
+      "dense_rr": 0.1667,
+      "osam_rr": 0.1667,
+      "pure_osam_rr": 0.0909
+    },
+    {
+      "record_id": "d52b4f67",
+      "qtype": "single-session-user",
+      "recency": 47,
+      "oracle": true,
+      "dense_rr": 0.125,
+      "osam_rr": 0.1,
+      "pure_osam_rr": 0.0286
+    },
+    {
+      "record_id": "caf9ead2",
+      "qtype": "single-session-user",
+      "recency": 311,
+      "oracle": true,
+      "dense_rr": 0.5,
+      "osam_rr": 0.5,
+      "pure_osam_rr": 0.1429
+    },
+    {
+      "record_id": "ec81a493",
+      "qtype": "single-session-user",
+      "recency": 104,
+      "oracle": true,
+      "dense_rr": 1.0,
+      "osam_rr": 1.0,
+      "pure_osam_rr": 0.1429
+    },
+    {
+      "record_id": "bc8a6e93",
+      "qtype": "single-session-user",
+      "recency": 211,
+      "oracle": false,
+      "dense_rr": 0.0,
+      "osam_rr": 0.0,
+      "pure_osam_rr": 0.0
+    },
+    {
+      "record_id": "001be529",
+      "qtype": "single-session-user",
+      "recency": 91,
+      "oracle": true,
+      "dense_rr": 0.5,
+      "osam_rr": 0.5,
+      "pure_osam_rr": 0.0714
+    },
+    {
+      "record_id": "76d63226",
+      "qtype": "single-session-user",
+      "recency": 412,
+      "oracle": true,
+      "dense_rr": 1.0,
+      "osam_rr": 1.0,
+      "pure_osam_rr": 0.0303
+    },
+    {
+      "record_id": "c19f7a0b",
+      "qtype": "single-session-user",
+      "recency": 282,
+      "oracle": true,
+      "dense_rr": 0.25,
+      "osam_rr": 0.1,
+      "pure_osam_rr": 0.0217
+    },
+    {
+      "record_id": "29f2956b",
+      "qtype": "single-session-user",
+      "recency": 377,
+      "oracle": true,
+      "dense_rr": 1.0,
+      "osam_rr": 1.0,
+      "pure_osam_rr": 0.0233
+    },
+    {
+      "record_id": "1faac195",
+      "qtype": "single-session-user",
+      "recency": 457,
+      "oracle": true,
+      "dense_rr": 1.0,
+      "osam_rr": 1.0,
+      "pure_osam_rr": 0.1667
+    },
+    {
+      "record_id": "36580ce8",
+      "qtype": "single-session-user",
+      "recency": 79,
+      "oracle": true,
+      "dense_rr": 0.5,
+      "osam_rr": 0.3333,
+      "pure_osam_rr": 0.0625
+    },
+    {
+      "record_id": "a82c026e",
+      "qtype": "single-session-user",
+      "recency": 161,
+      "oracle": true,
+      "dense_rr": 0.1429,
+      "osam_rr": 0.05,
+      "pure_osam_rr": 0.0222
+    },
+    {
+      "record_id": "gpt4_59c863d7",
+      "qtype": "multi-session",
+      "recency": 29,
+      "oracle": true,
+      "dense_rr": 1.0,
+      "osam_rr": 1.0,
+      "pure_osam_rr": 0.25
+    },
+    {
+      "record_id": "b5ef892d",
+      "qtype": "multi-session",
+      "recency": 101,
+      "oracle": true,
+      "dense_rr": 0.5,
+      "osam_rr": 0.2,
+      "pure_osam_rr": 0.0256
+    },
+    {
+      "record_id": "c4a1ceb8",
+      "qtype": "multi-session",
+      "recency": 11,
+      "oracle": true,
+      "dense_rr": 1.0,
+      "osam_rr": 0.3333,
+      "pure_osam_rr": 0.125
+    },
+    {
+      "record_id": "6cb6f249",
+      "qtype": "multi-session",
+      "recency": 210,
+      "oracle": true,
+      "dense_rr": 0.2,
+      "osam_rr": 0.2,
+      "pure_osam_rr": 0.0833
+    },
+    {
+      "record_id": "88432d0a",
+      "qtype": "multi-session",
+      "recency": 61,
+      "oracle": true,
+      "dense_rr": 0.0556,
+      "osam_rr": 0.0476,
+      "pure_osam_rr": 0.0357
+    },
+    {
+      "record_id": "80ec1f4f",
+      "qtype": "multi-session",
+      "recency": 156,
+      "oracle": true,
+      "dense_rr": 0.0714,
+      "osam_rr": 0.0833,
+      "pure_osam_rr": 0.05
+    },
+    {
+      "record_id": "d23cf73b",
+      "qtype": "multi-session",
+      "recency": 47,
+      "oracle": true,
+      "dense_rr": 0.1667,
+      "osam_rr": 0.125,
+      "pure_osam_rr": 0.0833
+    },
+    {
+      "record_id": "gpt4_7fce9456",
+      "qtype": "multi-session",
+      "recency": 57,
+      "oracle": true,
+      "dense_rr": 0.5,
+      "osam_rr": 0.3333,
+      "pure_osam_rr": 0.1429
+    },
+    {
+      "record_id": "d682f1a2",
+      "qtype": "multi-session",
+      "recency": 63,
+      "oracle": true,
+      "dense_rr": 0.25,
+      "osam_rr": 0.3333,
+      "pure_osam_rr": 0.0909
+    },
+    {
+      "record_id": "gpt4_2ba83207",
+      "qtype": "multi-session",
+      "recency": 50,
+      "oracle": true,
+      "dense_rr": 1.0,
+      "osam_rr": 0.5,
+      "pure_osam_rr": 0.0357
+    },
+    {
+      "record_id": "00ca467f",
+      "qtype": "multi-session",
+      "recency": 73,
+      "oracle": true,
+      "dense_rr": 0.1429,
+      "osam_rr": 0.0909,
+      "pure_osam_rr": 0.0256
+    },
+    {
+      "record_id": "b3c15d39",
+      "qtype": "multi-session",
+      "recency": 211,
+      "oracle": true,
+      "dense_rr": 0.25,
+      "osam_rr": 0.25,
+      "pure_osam_rr": 0.0556
+    },
+    {
+      "record_id": "gpt4_31ff4165",
+      "qtype": "multi-session",
+      "recency": 23,
+      "oracle": true,
+      "dense_rr": 0.1429,
+      "osam_rr": 0.1111,
+      "pure_osam_rr": 0.0909
+    },
+    {
+      "record_id": "2788b940",
+      "qtype": "multi-session",
+      "recency": 43,
+      "oracle": true,
+      "dense_rr": 0.2,
+      "osam_rr": 0.2,
+      "pure_osam_rr": 0.125
+    },
+    {
+      "record_id": "60bf93ed",
+      "qtype": "multi-session",
+      "recency": 322,
+      "oracle": true,
+      "dense_rr": 0.25,
+      "osam_rr": 0.3333,
+      "pure_osam_rr": 0.0667
+    },
+    {
+      "record_id": "9d25d4e0",
+      "qtype": "multi-session",
+      "recency": 138,
+      "oracle": true,
+      "dense_rr": 0.0526,
+      "osam_rr": 0.0417,
+      "pure_osam_rr": 0.0435
+    },
+    {
+      "record_id": "60472f9c",
+      "qtype": "multi-session",
+      "recency": 85,
+      "oracle": false,
+      "dense_rr": 0.0,
+      "osam_rr": 0.0,
+      "pure_osam_rr": 0.0
+    },
+    {
+      "record_id": "a9f6b44c",
+      "qtype": "multi-session",
+      "recency": 94,
+      "oracle": true,
+      "dense_rr": 0.125,
+      "osam_rr": 0.125,
+      "pure_osam_rr": 0.1
+    },
+    {
+      "record_id": "d851d5ba",
+      "qtype": "multi-session",
+      "recency": 133,
+      "oracle": true,
+      "dense_rr": 0.1667,
+      "osam_rr": 0.2,
+      "pure_osam_rr": 0.1667
+    },
+    {
+      "record_id": "gpt4_ab202e7f",
+      "qtype": "multi-session",
+      "recency": 35,
+      "oracle": true,
+      "dense_rr": 0.5,
+      "osam_rr": 0.5,
+      "pure_osam_rr": 0.2
+    },
+    {
+      "record_id": "gpt4_e05b82a6",
+      "qtype": "multi-session",
+      "recency": 41,
+      "oracle": true,
+      "dense_rr": 1.0,
+      "osam_rr": 1.0,
+      "pure_osam_rr": 0.0667
+    },
+    {
+      "record_id": "10d9b85a",
+      "qtype": "multi-session",
+      "recency": 41,
+      "oracle": false,
+      "dense_rr": 0.0,
+      "osam_rr": 0.0,
+      "pure_osam_rr": 0.0
+    },
+    {
+      "record_id": "e3038f8c",
+      "qtype": "multi-session",
+      "recency": 312,
+      "oracle": true,
+      "dense_rr": 0.1667,
+      "osam_rr": 0.1667,
+      "pure_osam_rr": 1.0
+    },
+    {
+      "record_id": "1a8a66a6",
+      "qtype": "multi-session",
+      "recency": 113,
+      "oracle": true,
+      "dense_rr": 0.0769,
+      "osam_rr": 0.05,
+      "pure_osam_rr": 0.0417
+    },
+    {
+      "record_id": "bf659f65",
+      "qtype": "multi-session",
+      "recency": 44,
+      "oracle": true,
+      "dense_rr": 0.5,
+      "osam_rr": 0.5,
+      "pure_osam_rr": 0.2
+    },
+    {
+      "record_id": "gpt4_2f91af09",
+      "qtype": "multi-session",
+      "recency": 16,
+      "oracle": true,
+      "dense_rr": 0.3333,
+      "osam_rr": 0.125,
+      "pure_osam_rr": 0.0769
+    },
+    {
+      "record_id": "81507db6",
+      "qtype": "multi-session",
+      "recency": 196,
+      "oracle": true,
+      "dense_rr": 0.0435,
+      "osam_rr": 0.0417,
+      "pure_osam_rr": 0.0294
+    },
+    {
+      "record_id": "edced276_abs",
+      "qtype": "multi-session",
+      "recency": 325,
+      "oracle": true,
+      "dense_rr": 0.125,
+      "osam_rr": 0.1111,
+      "pure_osam_rr": 0.0357
+    },
+    {
+      "record_id": "8a2466db",
+      "qtype": "single-session-preference",
+      "recency": 422,
+      "oracle": true,
+      "dense_rr": 1.0,
+      "osam_rr": 1.0,
+      "pure_osam_rr": 0.0303
+    },
+    {
+      "record_id": "06878be2",
+      "qtype": "single-session-preference",
+      "recency": 108,
+      "oracle": true,
+      "dense_rr": 0.5,
+      "osam_rr": 0.5,
+      "pure_osam_rr": 0.1
+    },
+    {
+      "record_id": "0edc2aef",
+      "qtype": "single-session-preference",
+      "recency": 84,
+      "oracle": true,
+      "dense_rr": 1.0,
+      "osam_rr": 1.0,
+      "pure_osam_rr": 0.1111
+    },
+    {
+      "record_id": "195a1a1b",
+      "qtype": "single-session-preference",
+      "recency": 11,
+      "oracle": true,
+      "dense_rr": 1.0,
+      "osam_rr": 1.0,
+      "pure_osam_rr": 0.1111
+    },
+    {
+      "record_id": "caf03d32",
+      "qtype": "single-session-preference",
+      "recency": 15,
+      "oracle": true,
+      "dense_rr": 1.0,
+      "osam_rr": 1.0,
+      "pure_osam_rr": 0.1429
+    },
+    {
+      "record_id": "6b7dfb22",
+      "qtype": "single-session-preference",
+      "recency": 372,
+      "oracle": true,
+      "dense_rr": 0.3333,
+      "osam_rr": 0.25,
+      "pure_osam_rr": 0.0208
+    },
+    {
+      "record_id": "95228167",
+      "qtype": "single-session-preference",
+      "recency": 238,
+      "oracle": true,
+      "dense_rr": 0.1667,
+      "osam_rr": 0.125,
+      "pure_osam_rr": 0.0208
+    },
+    {
+      "record_id": "1da05512",
+      "qtype": "single-session-preference",
+      "recency": 82,
+      "oracle": true,
+      "dense_rr": 1.0,
+      "osam_rr": 1.0,
+      "pure_osam_rr": 0.0833
+    },
+    {
+      "record_id": "fca70973",
+      "qtype": "single-session-preference",
+      "recency": 11,
+      "oracle": true,
+      "dense_rr": 1.0,
+      "osam_rr": 1.0,
+      "pure_osam_rr": 0.1667
+    },
+    {
+      "record_id": "a89d7624",
+      "qtype": "single-session-preference",
+      "recency": 150,
+      "oracle": true,
+      "dense_rr": 1.0,
+      "osam_rr": 1.0,
+      "pure_osam_rr": 0.0833
+    },
+    {
+      "record_id": "b0479f84",
+      "qtype": "single-session-preference",
+      "recency": 115,
+      "oracle": true,
+      "dense_rr": 1.0,
+      "osam_rr": 1.0,
+      "pure_osam_rr": 0.0769
+    },
+    {
+      "record_id": "2311e44b",
+      "qtype": "multi-session",
+      "recency": 43,
+      "oracle": true,
+      "dense_rr": 1.0,
+      "osam_rr": 1.0,
+      "pure_osam_rr": 0.25
+    },
+    {
+      "record_id": "cc06de0d",
+      "qtype": "multi-session",
+      "recency": 97,
+      "oracle": true,
+      "dense_rr": 0.25,
+      "osam_rr": 0.25,
+      "pure_osam_rr": 0.04
+    },
+    {
+      "record_id": "1f2b8d4f",
+      "qtype": "multi-session",
+      "recency": 387,
+      "oracle": true,
+      "dense_rr": 0.125,
+      "osam_rr": 0.125,
+      "pure_osam_rr": 0.037
+    },
+    {
+      "record_id": "e6041065",
+      "qtype": "multi-session",
+      "recency": 77,
+      "oracle": true,
+      "dense_rr": 0.3333,
+      "osam_rr": 0.5,
+      "pure_osam_rr": 0.0909
+    },
+    {
+      "record_id": "f35224e0",
+      "qtype": "multi-session",
+      "recency": 59,
+      "oracle": true,
+      "dense_rr": 1.0,
+      "osam_rr": 1.0,
+      "pure_osam_rr": 0.1111
+    },
+    {
+      "record_id": "6456829e",
+      "qtype": "multi-session",
+      "recency": 49,
+      "oracle": true,
+      "dense_rr": 0.1667,
+      "osam_rr": 0.25,
+      "pure_osam_rr": 0.5
+    },
+    {
+      "record_id": "a4996e51",
+      "qtype": "multi-session",
+      "recency": 62,
+      "oracle": true,
+      "dense_rr": 0.125,
+      "osam_rr": 0.1429,
+      "pure_osam_rr": 0.0909
+    },
+    {
+      "record_id": "3c1045c8",
+      "qtype": "multi-session",
+      "recency": 255,
+      "oracle": true,
+      "dense_rr": 1.0,
+      "osam_rr": 1.0,
+      "pure_osam_rr": 0.1111
+    },
+    {
+      "record_id": "e25c3b8d",
+      "qtype": "multi-session",
+      "recency": 314,
+      "oracle": true,
+      "dense_rr": 1.0,
+      "osam_rr": 1.0,
+      "pure_osam_rr": 0.0625
+    },
+    {
+      "record_id": "4bc144e2",
+      "qtype": "multi-session",
+      "recency": 79,
+      "oracle": true,
+      "dense_rr": 0.1429,
+      "osam_rr": 0.1667,
+      "pure_osam_rr": 0.0455
+    },
+    {
+      "record_id": "ef66a6e5",
+      "qtype": "multi-session",
+      "recency": 185,
+      "oracle": true,
+      "dense_rr": 1.0,
+      "osam_rr": 1.0,
+      "pure_osam_rr": 0.0323
+    },
+    {
+      "record_id": "5025383b",
+      "qtype": "multi-session",
+      "recency": 9,
+      "oracle": true,
+      "dense_rr": 0.2,
+      "osam_rr": 0.25,
+      "pure_osam_rr": 0.5
+    },
+    {
+      "record_id": "91b15a6e",
+      "qtype": "multi-session",
+      "recency": 176,
+      "oracle": true,
+      "dense_rr": 0.5,
+      "osam_rr": 0.5,
+      "pure_osam_rr": 0.1111
+    },
+    {
+      "record_id": "77eafa52",
+      "qtype": "multi-session",
+      "recency": 162,
+      "oracle": true,
+      "dense_rr": 0.1429,
+      "osam_rr": 0.125,
+      "pure_osam_rr": 0.0455
+    },
+    {
+      "record_id": "0100672e",
+      "qtype": "multi-session",
+      "recency": 45,
+      "oracle": true,
+      "dense_rr": 0.5,
+      "osam_rr": 0.3333,
+      "pure_osam_rr": 0.0909
+    },
+    {
+      "record_id": "a96c20ee",
+      "qtype": "multi-session",
+      "recency": 388,
+      "oracle": true,
+      "dense_rr": 0.0625,
+      "osam_rr": 0.0526,
+      "pure_osam_rr": 0.0333
+    },
+    {
+      "record_id": "92a0aa75",
+      "qtype": "multi-session",
+      "recency": 96,
+      "oracle": false,
+      "dense_rr": 0.0,
+      "osam_rr": 0.0,
+      "pure_osam_rr": 0.0
+    },
+    {
+      "record_id": "0ea62687",
+      "qtype": "multi-session",
+      "recency": 215,
+      "oracle": true,
+      "dense_rr": 0.3333,
+      "osam_rr": 0.5,
+      "pure_osam_rr": 0.1111
+    },
+    {
+      "record_id": "67e0d0f2",
+      "qtype": "multi-session",
+      "recency": 115,
+      "oracle": true,
+      "dense_rr": 0.2,
+      "osam_rr": 0.1429,
+      "pure_osam_rr": 0.0833
+    },
+    {
+      "record_id": "60159905",
+      "qtype": "multi-session",
+      "recency": 393,
+      "oracle": true,
+      "dense_rr": 1.0,
+      "osam_rr": 1.0,
+      "pure_osam_rr": 0.0833
+    },
+    {
+      "record_id": "73d42213",
+      "qtype": "multi-session",
+      "recency": 45,
+      "oracle": true,
+      "dense_rr": 1.0,
+      "osam_rr": 1.0,
+      "pure_osam_rr": 0.25
+    },
+    {
+      "record_id": "099778bb",
+      "qtype": "multi-session",
+      "recency": 38,
+      "oracle": true,
+      "dense_rr": 0.3333,
+      "osam_rr": 0.3333,
+      "pure_osam_rr": 0.125
+    },
+    {
+      "record_id": "d6062bb9",
+      "qtype": "multi-session",
+      "recency": 330,
+      "oracle": true,
+      "dense_rr": 1.0,
+      "osam_rr": 1.0,
+      "pure_osam_rr": 0.1
+    },
+    {
+      "record_id": "a3332713",
+      "qtype": "multi-session",
+      "recency": 85,
+      "oracle": true,
+      "dense_rr": 0.1667,
+      "osam_rr": 0.1429,
+      "pure_osam_rr": 0.0714
+    },
+    {
+      "record_id": "55241a1f",
+      "qtype": "multi-session",
+      "recency": 293,
+      "oracle": true,
+      "dense_rr": 0.5,
+      "osam_rr": 0.5,
+      "pure_osam_rr": 0.0667
+    },
+    {
+      "record_id": "f0e564bc",
+      "qtype": "multi-session",
+      "recency": 172,
+      "oracle": true,
+      "dense_rr": 0.25,
+      "osam_rr": 0.3333,
+      "pure_osam_rr": 1.0
+    },
+    {
+      "record_id": "078150f1",
+      "qtype": "multi-session",
+      "recency": 130,
+      "oracle": true,
+      "dense_rr": 1.0,
+      "osam_rr": 1.0,
+      "pure_osam_rr": 0.0455
+    },
+    {
+      "record_id": "a346bb18",
+      "qtype": "multi-session",
+      "recency": 239,
+      "oracle": true,
+      "dense_rr": 0.1429,
+      "osam_rr": 0.1429,
+      "pure_osam_rr": 0.1667
+    },
+    {
+      "record_id": "37f165cf",
+      "qtype": "multi-session",
+      "recency": 131,
+      "oracle": true,
+      "dense_rr": 1.0,
+      "osam_rr": 1.0,
+      "pure_osam_rr": 0.1
+    },
+    {
+      "record_id": "8e91e7d9",
+      "qtype": "multi-session",
+      "recency": 272,
+      "oracle": true,
+      "dense_rr": 0.1,
+      "osam_rr": 0.1,
+      "pure_osam_rr": 0.0667
+    },
+    {
+      "record_id": "e56a43b9",
+      "qtype": "multi-session",
+      "recency": 126,
+      "oracle": true,
+      "dense_rr": 1.0,
+      "osam_rr": 1.0,
+      "pure_osam_rr": 0.0256
+    },
+    {
+      "record_id": "21d02d0d",
+      "qtype": "multi-session",
+      "recency": 180,
+      "oracle": true,
+      "dense_rr": 0.5,
+      "osam_rr": 0.5,
+      "pure_osam_rr": 0.1429
+    },
+    {
+      "record_id": "e5ba910e_abs",
+      "qtype": "multi-session",
+      "recency": 297,
+      "oracle": true,
+      "dense_rr": 1.0,
+      "osam_rr": 1.0,
+      "pure_osam_rr": 0.1429
+    },
+    {
+      "record_id": "gpt4_f49edff3",
+      "qtype": "temporal-reasoning",
+      "recency": 45,
+      "oracle": true,
+      "dense_rr": 1.0,
+      "osam_rr": 1.0,
+      "pure_osam_rr": 0.0833
+    },
+    {
+      "record_id": "b46e15ed",
+      "qtype": "temporal-reasoning",
+      "recency": 5,
+      "oracle": true,
+      "dense_rr": 0.0385,
+      "osam_rr": 0.0417,
+      "pure_osam_rr": 0.1667
+    },
+    {
+      "record_id": "gpt4_4929293a",
+      "qtype": "temporal-reasoning",
+      "recency": 180,
+      "oracle": true,
+      "dense_rr": 1.0,
+      "osam_rr": 1.0,
+      "pure_osam_rr": 0.5
+    },
+    {
+      "record_id": "9a707b81",
+      "qtype": "temporal-reasoning",
+      "recency": 15,
+      "oracle": true,
+      "dense_rr": 0.0303,
+      "osam_rr": 0.0526,
+      "pure_osam_rr": 0.1111
+    },
+    {
+      "record_id": "gpt4_1d4ab0c9",
+      "qtype": "temporal-reasoning",
+      "recency": 94,
+      "oracle": true,
+      "dense_rr": 0.5,
+      "osam_rr": 0.5,
+      "pure_osam_rr": 0.0357
+    },
+    {
+      "record_id": "gpt4_a1b77f9c",
+      "qtype": "temporal-reasoning",
+      "recency": 76,
+      "oracle": true,
+      "dense_rr": 0.5,
+      "osam_rr": 0.5,
+      "pure_osam_rr": 0.3333
+    },
+    {
+      "record_id": "gpt4_468eb063",
+      "qtype": "temporal-reasoning",
+      "recency": 64,
+      "oracle": false,
+      "dense_rr": 0.0,
+      "osam_rr": 0.0,
+      "pure_osam_rr": 0.0
+    },
+    {
+      "record_id": "gpt4_7abb270c",
+      "qtype": "temporal-reasoning",
+      "recency": 20,
+      "oracle": true,
+      "dense_rr": 0.25,
+      "osam_rr": 0.25,
+      "pure_osam_rr": 0.25
+    },
+    {
+      "record_id": "gpt4_1e4a8aeb",
+      "qtype": "temporal-reasoning",
+      "recency": 79,
+      "oracle": true,
+      "dense_rr": 0.5,
+      "osam_rr": 0.3333,
+      "pure_osam_rr": 0.0323
+    },
+    {
+      "record_id": "gpt4_61e13b3c",
+      "qtype": "temporal-reasoning",
+      "recency": 35,
+      "oracle": true,
+      "dense_rr": 0.25,
+      "osam_rr": 0.25,
+      "pure_osam_rr": 0.05
+    },
+    {
+      "record_id": "2ebe6c90",
+      "qtype": "temporal-reasoning",
+      "recency": 9,
+      "oracle": true,
+      "dense_rr": 1.0,
+      "osam_rr": 0.5,
+      "pure_osam_rr": 0.25
+    },
+    {
+      "record_id": "gpt4_4ef30696",
+      "qtype": "temporal-reasoning",
+      "recency": 143,
+      "oracle": true,
+      "dense_rr": 0.2,
+      "osam_rr": 0.1429,
+      "pure_osam_rr": 0.05
+    },
+    {
+      "record_id": "8077ef71",
+      "qtype": "temporal-reasoning",
+      "recency": 158,
+      "oracle": true,
+      "dense_rr": 1.0,
+      "osam_rr": 1.0,
+      "pure_osam_rr": 0.1667
+    },
+    {
+      "record_id": "gpt4_8e165409",
+      "qtype": "temporal-reasoning",
+      "recency": 154,
+      "oracle": true,
+      "dense_rr": 0.5,
+      "osam_rr": 0.5,
+      "pure_osam_rr": 0.0769
+    },
+    {
+      "record_id": "gpt4_21adecb5",
+      "qtype": "temporal-reasoning",
+      "recency": 36,
+      "oracle": true,
+      "dense_rr": 0.04,
+      "osam_rr": 0.0323,
+      "pure_osam_rr": 0.0263
+    },
+    {
+      "record_id": "gpt4_98f46fc6",
+      "qtype": "temporal-reasoning",
+      "recency": 96,
+      "oracle": true,
+      "dense_rr": 0.3333,
+      "osam_rr": 0.5,
+      "pure_osam_rr": 0.25
+    },
+    {
+      "record_id": "gpt4_68e94287",
+      "qtype": "temporal-reasoning",
+      "recency": 112,
+      "oracle": true,
+      "dense_rr": 1.0,
+      "osam_rr": 1.0,
+      "pure_osam_rr": 0.0667
+    },
+    {
+      "record_id": "gpt4_e414231e",
+      "qtype": "temporal-reasoning",
+      "recency": 78,
+      "oracle": true,
+      "dense_rr": 1.0,
+      "osam_rr": 0.5,
+      "pure_osam_rr": 0.125
+    },
+    {
+      "record_id": "gpt4_7bc6cf22",
+      "qtype": "temporal-reasoning",
+      "recency": 118,
+      "oracle": true,
+      "dense_rr": 1.0,
+      "osam_rr": 1.0,
+      "pure_osam_rr": 0.0286
+    },
+    {
+      "record_id": "2ebe6c92",
+      "qtype": "temporal-reasoning",
+      "recency": 73,
+      "oracle": true,
+      "dense_rr": 0.0909,
+      "osam_rr": 0.125,
+      "pure_osam_rr": 0.0667
+    },
+    {
+      "record_id": "b46e15ee",
+      "qtype": "temporal-reasoning",
+      "recency": 74,
+      "oracle": true,
+      "dense_rr": 0.1429,
+      "osam_rr": 0.25,
+      "pure_osam_rr": 0.5
+    },
+    {
+      "record_id": "gpt4_d6585ce9",
+      "qtype": "temporal-reasoning",
+      "recency": 203,
+      "oracle": false,
+      "dense_rr": 0.0,
+      "osam_rr": 0.0,
+      "pure_osam_rr": 0.0
+    },
+    {
+      "record_id": "gpt4_1e4a8aec",
+      "qtype": "temporal-reasoning",
+      "recency": 65,
+      "oracle": false,
+      "dense_rr": 0.0,
+      "osam_rr": 0.0,
+      "pure_osam_rr": 0.0
+    },
+    {
+      "record_id": "gpt4_59149c78",
+      "qtype": "temporal-reasoning",
+      "recency": 115,
+      "oracle": true,
+      "dense_rr": 0.037,
+      "osam_rr": 0.0714,
+      "pure_osam_rr": 0.5
+    },
+    {
+      "record_id": "gpt4_e414231f",
+      "qtype": "temporal-reasoning",
+      "recency": 95,
+      "oracle": true,
+      "dense_rr": 0.0714,
+      "osam_rr": 0.0667,
+      "pure_osam_rr": 0.0526
+    },
+    {
+      "record_id": "gpt4_4929293b",
+      "qtype": "temporal-reasoning",
+      "recency": 21,
+      "oracle": true,
+      "dense_rr": 0.05,
+      "osam_rr": 0.0556,
+      "pure_osam_rr": 0.0625
+    },
+    {
+      "record_id": "gpt4_468eb064",
+      "qtype": "temporal-reasoning",
+      "recency": 21,
+      "oracle": false,
+      "dense_rr": 0.0,
+      "osam_rr": 0.0,
+      "pure_osam_rr": 0.0
+    },
+    {
+      "record_id": "gpt4_fa19884d",
+      "qtype": "temporal-reasoning",
+      "recency": 59,
+      "oracle": true,
+      "dense_rr": 0.1,
+      "osam_rr": 0.125,
+      "pure_osam_rr": 0.0625
+    },
+    {
+      "record_id": "gpt4_8279ba03",
+      "qtype": "temporal-reasoning",
+      "recency": 59,
+      "oracle": true,
+      "dense_rr": 0.0667,
+      "osam_rr": 0.0714,
+      "pure_osam_rr": 0.0435
+    },
+    {
+      "record_id": "gpt4_b5700ca0",
+      "qtype": "temporal-reasoning",
+      "recency": 152,
+      "oracle": true,
+      "dense_rr": 1.0,
+      "osam_rr": 1.0,
+      "pure_osam_rr": 0.05
+    },
+    {
+      "record_id": "gpt4_2487a7cb",
+      "qtype": "temporal-reasoning",
+      "recency": 172,
+      "oracle": true,
+      "dense_rr": 1.0,
+      "osam_rr": 1.0,
+      "pure_osam_rr": 0.0556
+    },
+    {
+      "record_id": "gpt4_76048e76",
+      "qtype": "temporal-reasoning",
+      "recency": 36,
+      "oracle": true,
+      "dense_rr": 0.25,
+      "osam_rr": 0.1429,
+      "pure_osam_rr": 0.1429
+    },
+    {
+      "record_id": "bbf86515",
+      "qtype": "temporal-reasoning",
+      "recency": 106,
+      "oracle": true,
+      "dense_rr": 0.125,
+      "osam_rr": 0.1429,
+      "pure_osam_rr": 0.2
+    },
+    {
+      "record_id": "gpt4_0b2f1d21",
+      "qtype": "temporal-reasoning",
+      "recency": 302,
+      "oracle": true,
+      "dense_rr": 0.5,
+      "osam_rr": 0.5,
+      "pure_osam_rr": 0.0244
+    },
+    {
+      "record_id": "gpt4_2d58bcd6",
+      "qtype": "temporal-reasoning",
+      "recency": 189,
+      "oracle": true,
+      "dense_rr": 0.5,
+      "osam_rr": 0.5,
+      "pure_osam_rr": 0.1
+    },
+    {
+      "record_id": "gpt4_65aabe59",
+      "qtype": "temporal-reasoning",
+      "recency": 95,
+      "oracle": true,
+      "dense_rr": 0.3333,
+      "osam_rr": 0.3333,
+      "pure_osam_rr": 0.0833
+    },
+    {
+      "record_id": "982b5123",
+      "qtype": "temporal-reasoning",
+      "recency": 63,
+      "oracle": true,
+      "dense_rr": 1.0,
+      "osam_rr": 1.0,
+      "pure_osam_rr": 0.037
+    },
+    {
+      "record_id": "gpt4_483dd43c",
+      "qtype": "temporal-reasoning",
+      "recency": 252,
+      "oracle": true,
+      "dense_rr": 1.0,
+      "osam_rr": 1.0,
+      "pure_osam_rr": 0.04
+    },
+    {
+      "record_id": "c9f37c46",
+      "qtype": "temporal-reasoning",
+      "recency": 261,
+      "oracle": true,
+      "dense_rr": 0.3333,
+      "osam_rr": 0.5,
+      "pure_osam_rr": 0.2
+    },
+    {
+      "record_id": "gpt4_8c8961ae",
+      "qtype": "temporal-reasoning",
+      "recency": 99,
+      "oracle": true,
+      "dense_rr": 1.0,
+      "osam_rr": 1.0,
+      "pure_osam_rr": 0.0625
+    },
+    {
+      "record_id": "a3045048",
+      "qtype": "temporal-reasoning",
+      "recency": 207,
+      "oracle": true,
+      "dense_rr": 0.25,
+      "osam_rr": 0.1111,
+      "pure_osam_rr": 0.0476
+    },
+    {
+      "record_id": "b29f3365",
+      "qtype": "temporal-reasoning",
+      "recency": 129,
+      "oracle": true,
+      "dense_rr": 0.5,
+      "osam_rr": 0.5,
+      "pure_osam_rr": 0.0667
+    },
+    {
+      "record_id": "gpt4_213fd887",
+      "qtype": "temporal-reasoning",
+      "recency": 23,
+      "oracle": true,
+      "dense_rr": 0.3333,
+      "osam_rr": 0.3333,
+      "pure_osam_rr": 0.5
+    },
+    {
+      "record_id": "gpt4_70e84552_abs",
+      "qtype": "temporal-reasoning",
+      "recency": 102,
+      "oracle": true,
+      "dense_rr": 0.125,
+      "osam_rr": 0.0909,
+      "pure_osam_rr": 0.0244
+    },
+    {
+      "record_id": "982b5123_abs",
+      "qtype": "temporal-reasoning",
+      "recency": 442,
+      "oracle": true,
+      "dense_rr": 1.0,
+      "osam_rr": 1.0,
+      "pure_osam_rr": 0.0667
+    },
+    {
+      "record_id": "gpt4_c27434e8_abs",
+      "qtype": "temporal-reasoning",
+      "recency": 55,
+      "oracle": true,
+      "dense_rr": 0.0833,
+      "osam_rr": 0.0833,
+      "pure_osam_rr": 0.0345
+    },
+    {
+      "record_id": "gpt4_fe651585_abs",
+      "qtype": "temporal-reasoning",
+      "recency": 429,
+      "oracle": true,
+      "dense_rr": 0.1,
+      "osam_rr": 0.1111,
+      "pure_osam_rr": 0.1429
+    },
+    {
+      "record_id": "6a1eabeb",
+      "qtype": "knowledge-update",
+      "recency": 47,
+      "oracle": true,
+      "dense_rr": 0.5,
+      "osam_rr": 0.3333,
+      "pure_osam_rr": 0.2
+    },
+    {
+      "record_id": "d7c942c3",
+      "qtype": "knowledge-update",
+      "recency": 134,
+      "oracle": true,
+      "dense_rr": 1.0,
+      "osam_rr": 1.0,
+      "pure_osam_rr": 0.1
+    },
+    {
+      "record_id": "9ea5eabc",
+      "qtype": "knowledge-update",
+      "recency": 174,
+      "oracle": true,
+      "dense_rr": 0.5,
+      "osam_rr": 0.25,
+      "pure_osam_rr": 0.0667
+    },
+    {
+      "record_id": "07741c44",
+      "qtype": "knowledge-update",
+      "recency": 166,
+      "oracle": true,
+      "dense_rr": 0.0909,
+      "osam_rr": 0.0909,
+      "pure_osam_rr": 0.0526
+    },
+    {
+      "record_id": "031748ae",
+      "qtype": "knowledge-update",
+      "recency": 417,
+      "oracle": true,
+      "dense_rr": 0.5,
+      "osam_rr": 0.5,
+      "pure_osam_rr": 0.0345
+    },
+    {
+      "record_id": "f9e8c073",
+      "qtype": "knowledge-update",
+      "recency": 143,
+      "oracle": true,
+      "dense_rr": 0.2,
+      "osam_rr": 0.1667,
+      "pure_osam_rr": 0.0294
+    },
+    {
+      "record_id": "2698e78f",
+      "qtype": "knowledge-update",
+      "recency": 61,
+      "oracle": true,
+      "dense_rr": 0.2,
+      "osam_rr": 0.1667,
+      "pure_osam_rr": 0.0455
+    },
+    {
+      "record_id": "b6019101",
+      "qtype": "knowledge-update",
+      "recency": 27,
+      "oracle": true,
+      "dense_rr": 0.5,
+      "osam_rr": 0.5,
+      "pure_osam_rr": 0.2
+    },
+    {
+      "record_id": "45dc21b6",
+      "qtype": "knowledge-update",
+      "recency": 170,
+      "oracle": true,
+      "dense_rr": 1.0,
+      "osam_rr": 1.0,
+      "pure_osam_rr": 0.0833
+    },
+    {
+      "record_id": "6071bd76",
+      "qtype": "knowledge-update",
+      "recency": 261,
+      "oracle": true,
+      "dense_rr": 1.0,
+      "osam_rr": 1.0,
+      "pure_osam_rr": 0.0714
+    },
+    {
+      "record_id": "72e3ee87",
+      "qtype": "knowledge-update",
+      "recency": 94,
+      "oracle": true,
+      "dense_rr": 0.3333,
+      "osam_rr": 0.3333,
+      "pure_osam_rr": 0.25
+    },
+    {
+      "record_id": "c4ea545c",
+      "qtype": "knowledge-update",
+      "recency": 151,
+      "oracle": true,
+      "dense_rr": 1.0,
+      "osam_rr": 1.0,
+      "pure_osam_rr": 0.05
+    },
+    {
+      "record_id": "01493427",
+      "qtype": "knowledge-update",
+      "recency": 202,
+      "oracle": true,
+      "dense_rr": 1.0,
+      "osam_rr": 1.0,
+      "pure_osam_rr": 0.0625
+    },
+    {
+      "record_id": "b01defab",
+      "qtype": "knowledge-update",
+      "recency": 55,
+      "oracle": true,
+      "dense_rr": 0.3333,
+      "osam_rr": 0.3333,
+      "pure_osam_rr": 0.0769
+    },
+    {
+      "record_id": "22d2cb42",
+      "qtype": "knowledge-update",
+      "recency": 240,
+      "oracle": true,
+      "dense_rr": 0.2,
+      "osam_rr": 0.2,
+      "pure_osam_rr": 0.0303
+    },
+    {
+      "record_id": "0e4e4c46",
+      "qtype": "knowledge-update",
+      "recency": 17,
+      "oracle": true,
+      "dense_rr": 0.25,
+      "osam_rr": 0.25,
+      "pure_osam_rr": 0.1667
+    },
+    {
+      "record_id": "59524333",
+      "qtype": "knowledge-update",
+      "recency": 109,
+      "oracle": true,
+      "dense_rr": 1.0,
+      "osam_rr": 1.0,
+      "pure_osam_rr": 0.1111
+    },
+    {
+      "record_id": "eace081b",
+      "qtype": "knowledge-update",
+      "recency": 103,
+      "oracle": true,
+      "dense_rr": 0.1667,
+      "osam_rr": 0.3333,
+      "pure_osam_rr": 1.0
+    },
+    {
+      "record_id": "e66b632c",
+      "qtype": "knowledge-update",
+      "recency": 15,
+      "oracle": true,
+      "dense_rr": 1.0,
+      "osam_rr": 1.0,
+      "pure_osam_rr": 0.1429
+    },
+    {
+      "record_id": "0ddfec37",
+      "qtype": "knowledge-update",
+      "recency": 166,
+      "oracle": true,
+      "dense_rr": 0.5,
+      "osam_rr": 0.5,
+      "pure_osam_rr": 0.05
+    },
+    {
+      "record_id": "cc5ded98",
+      "qtype": "knowledge-update",
+      "recency": 371,
+      "oracle": true,
+      "dense_rr": 0.125,
+      "osam_rr": 0.1,
+      "pure_osam_rr": 0.0256
+    },
+    {
+      "record_id": "69fee5aa",
+      "qtype": "knowledge-update",
+      "recency": 184,
+      "oracle": true,
+      "dense_rr": 1.0,
+      "osam_rr": 1.0,
+      "pure_osam_rr": 0.0625
+    },
+    {
+      "record_id": "7401057b",
+      "qtype": "knowledge-update",
+      "recency": 209,
+      "oracle": true,
+      "dense_rr": 0.3333,
+      "osam_rr": 0.3333,
+      "pure_osam_rr": 0.0417
+    },
+    {
+      "record_id": "a2f3aa27",
+      "qtype": "knowledge-update",
+      "recency": 218,
+      "oracle": true,
+      "dense_rr": 0.5,
+      "osam_rr": 0.5,
+      "pure_osam_rr": 0.1
+    },
+    {
+      "record_id": "06db6396",
+      "qtype": "knowledge-update",
+      "recency": 177,
+      "oracle": true,
+      "dense_rr": 1.0,
+      "osam_rr": 1.0,
+      "pure_osam_rr": 0.0526
+    },
+    {
+      "record_id": "3ba21379",
+      "qtype": "knowledge-update",
+      "recency": 354,
+      "oracle": true,
+      "dense_rr": 0.0476,
+      "osam_rr": 0.0526,
+      "pure_osam_rr": 0.0526
+    },
+    {
+      "record_id": "9bbe84a2",
+      "qtype": "knowledge-update",
+      "recency": 319,
+      "oracle": true,
+      "dense_rr": 0.125,
+      "osam_rr": 0.1,
+      "pure_osam_rr": 0.04
+    },
+    {
+      "record_id": "5c40ec5b",
+      "qtype": "knowledge-update",
+      "recency": 9,
+      "oracle": true,
+      "dense_rr": 0.25,
+      "osam_rr": 0.25,
+      "pure_osam_rr": 0.25
+    },
+    {
+      "record_id": "07741c45",
+      "qtype": "knowledge-update",
+      "recency": 180,
+      "oracle": true,
+      "dense_rr": 0.1429,
+      "osam_rr": 0.1429,
+      "pure_osam_rr": 0.0714
+    },
+    {
+      "record_id": "89527b6b",
+      "qtype": "single-session-assistant",
+      "recency": 287,
+      "oracle": true,
+      "dense_rr": 0.5,
+      "osam_rr": 0.5,
+      "pure_osam_rr": 0.0217
+    },
+    {
+      "record_id": "e9327a54",
+      "qtype": "single-session-assistant",
+      "recency": 435,
+      "oracle": true,
+      "dense_rr": 0.5,
+      "osam_rr": 0.5,
+      "pure_osam_rr": 0.1429
+    },
+    {
+      "record_id": "4c36ccef",
+      "qtype": "single-session-assistant",
+      "recency": 14,
+      "oracle": true,
+      "dense_rr": 0.2,
+      "osam_rr": 0.2,
+      "pure_osam_rr": 0.2
+    },
+    {
+      "record_id": "6ae235be",
+      "qtype": "single-session-assistant",
+      "recency": 135,
+      "oracle": true,
+      "dense_rr": 1.0,
+      "osam_rr": 1.0,
+      "pure_osam_rr": 0.0303
+    },
+    {
+      "record_id": "1903aded",
+      "qtype": "single-session-assistant",
+      "recency": 168,
+      "oracle": true,
+      "dense_rr": 0.5,
+      "osam_rr": 0.5,
+      "pure_osam_rr": 0.0294
+    },
+    {
+      "record_id": "fea54f57",
+      "qtype": "single-session-assistant",
+      "recency": 265,
+      "oracle": true,
+      "dense_rr": 0.2,
+      "osam_rr": 0.0909,
+      "pure_osam_rr": 0.025
+    },
+    {
+      "record_id": "cc539528",
+      "qtype": "single-session-assistant",
+      "recency": 141,
+      "oracle": true,
+      "dense_rr": 0.1,
+      "osam_rr": 0.1,
+      "pure_osam_rr": 0.0588
+    },
+    {
+      "record_id": "dc439ea3",
+      "qtype": "single-session-assistant",
+      "recency": 334,
+      "oracle": true,
+      "dense_rr": 0.1429,
+      "osam_rr": 0.125,
+      "pure_osam_rr": 0.0303
+    },
+    {
+      "record_id": "18dcd5a5",
+      "qtype": "single-session-assistant",
+      "recency": 87,
+      "oracle": true,
+      "dense_rr": 1.0,
+      "osam_rr": 1.0,
+      "pure_osam_rr": 0.0263
+    },
+    {
+      "record_id": "1d4da289",
+      "qtype": "single-session-assistant",
+      "recency": 379,
+      "oracle": true,
+      "dense_rr": 1.0,
+      "osam_rr": 1.0,
+      "pure_osam_rr": 0.1111
+    },
+    {
+      "record_id": "71a3fd6b",
+      "qtype": "single-session-assistant",
+      "recency": 73,
+      "oracle": true,
+      "dense_rr": 1.0,
+      "osam_rr": 0.5,
+      "pure_osam_rr": 0.1
+    },
+    {
+      "record_id": "1568498a",
+      "qtype": "single-session-assistant",
+      "recency": 414,
+      "oracle": true,
+      "dense_rr": 1.0,
+      "osam_rr": 0.5,
+      "pure_osam_rr": 0.0625
+    },
+    {
+      "record_id": "6222b6eb",
+      "qtype": "single-session-assistant",
+      "recency": 159,
+      "oracle": true,
+      "dense_rr": 0.3333,
+      "osam_rr": 0.3333,
+      "pure_osam_rr": 0.1
+    },
+    {
+      "record_id": "e8a79c70",
+      "qtype": "single-session-assistant",
+      "recency": 399,
+      "oracle": true,
+      "dense_rr": 0.125,
+      "osam_rr": 0.125,
+      "pure_osam_rr": 0.0345
+    },
+    {
+      "record_id": "3e321797",
+      "qtype": "single-session-assistant",
+      "recency": 111,
+      "oracle": true,
+      "dense_rr": 1.0,
+      "osam_rr": 1.0,
+      "pure_osam_rr": 0.0256
+    },
+    {
+      "record_id": "fca762bc",
+      "qtype": "single-session-assistant",
+      "recency": 274,
+      "oracle": true,
+      "dense_rr": 1.0,
+      "osam_rr": 1.0,
+      "pure_osam_rr": 0.1429
+    },
+    {
+      "record_id": "7a8d0b71",
+      "qtype": "single-session-assistant",
+      "recency": 313,
+      "oracle": true,
+      "dense_rr": 1.0,
+      "osam_rr": 1.0,
+      "pure_osam_rr": 0.1111
+    },
+    {
+      "record_id": "a40e080f",
+      "qtype": "single-session-assistant",
+      "recency": 182,
+      "oracle": true,
+      "dense_rr": 0.2,
+      "osam_rr": 0.2,
+      "pure_osam_rr": 0.2
+    },
+    {
+      "record_id": "5809eb10",
+      "qtype": "single-session-assistant",
+      "recency": 11,
+      "oracle": true,
+      "dense_rr": 1.0,
+      "osam_rr": 1.0,
+      "pure_osam_rr": 0.2
+    },
+    {
+      "record_id": "41275add",
+      "qtype": "single-session-assistant",
+      "recency": 275,
+      "oracle": true,
+      "dense_rr": 1.0,
+      "osam_rr": 1.0,
+      "pure_osam_rr": 0.125
+    },
+    {
+      "record_id": "4388e9dd",
+      "qtype": "single-session-assistant",
+      "recency": 452,
+      "oracle": true,
+      "dense_rr": 1.0,
+      "osam_rr": 1.0,
+      "pure_osam_rr": 0.037
+    },
+    {
+      "record_id": "561fabcd",
+      "qtype": "single-session-assistant",
+      "recency": 29,
+      "oracle": true,
+      "dense_rr": 0.2,
+      "osam_rr": 0.25,
+      "pure_osam_rr": 1.0
+    },
+    {
+      "record_id": "b759caee",
+      "qtype": "single-session-assistant",
+      "recency": 152,
+      "oracle": true,
+      "dense_rr": 1.0,
+      "osam_rr": 1.0,
+      "pure_osam_rr": 0.0286
+    },
+    {
+      "record_id": "ac031881",
+      "qtype": "single-session-assistant",
+      "recency": 453,
+      "oracle": true,
+      "dense_rr": 1.0,
+      "osam_rr": 1.0,
+      "pure_osam_rr": 0.1
+    },
+    {
+      "record_id": "28bcfaac",
+      "qtype": "single-session-assistant",
+      "recency": 469,
+      "oracle": true,
+      "dense_rr": 0.5,
+      "osam_rr": 0.5,
+      "pure_osam_rr": 0.0278
+    },
+    {
+      "record_id": "eaca4986",
+      "qtype": "single-session-assistant",
+      "recency": 82,
+      "oracle": true,
+      "dense_rr": 0.25,
+      "osam_rr": 0.1667,
+      "pure_osam_rr": 0.0278
+    },
+    {
+      "record_id": "e48988bc",
+      "qtype": "single-session-assistant",
+      "recency": 127,
+      "oracle": true,
+      "dense_rr": 0.1429,
+      "osam_rr": 0.1111,
+      "pure_osam_rr": 0.0625
+    },
+    {
+      "record_id": "65240037",
+      "qtype": "single-session-assistant",
+      "recency": 372,
+      "oracle": true,
+      "dense_rr": 0.1429,
+      "osam_rr": 0.1429,
+      "pure_osam_rr": 0.0417
+    },
+    {
+      "record_id": "778164c6",
+      "qtype": "single-session-assistant",
+      "recency": 31,
+      "oracle": true,
+      "dense_rr": 0.5,
+      "osam_rr": 0.5,
+      "pure_osam_rr": 0.1111
+    }
+  ]
+}
