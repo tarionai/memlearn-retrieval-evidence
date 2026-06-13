@@ -104,7 +104,7 @@ pip install pytest numpy
 python -m pytest -q
 ```
 
-197 tests pass with only `pytest` and `numpy` installed — no model download, no
+210 tests pass with only `pytest` and `numpy` installed — no model download, no
 network. Two groups inside the byte-identical `tests/unit/test_in_memory_adapters.py`
 are deselected in `pyproject.toml` (with explanatory comments there): a smoke test of
 the full memory kernel, which this repository deliberately does not vendor, and the
@@ -123,7 +123,7 @@ establish different things — do not conflate them:
 |---|---|---|
 | n=5 smoke run (`REPRODUCE.md` §3) | Verify installation and the execution path from these instructions alone | All arms execute and a result JSON is written; the n=5 numbers are statistical noise by design and validate nothing |
 | n=200 frozen-protocol rerun (`REPRODUCE.md` §4) | Independent protocol-level reproduction of the published evidence | Every sign and CI-excludes-zero verdict in `packet/METRICS.md` matches; point estimates may differ at the margin across dependency builds |
-| `python -m pytest -q` | Validate contracts and deterministic behavior | 197 tests pass, no network (two disclosed deselections — see `pyproject.toml`) |
+| `python -m pytest -q` | Validate contracts and deterministic behavior | 210 tests pass, no network (two disclosed deselections — see `pyproject.toml`) |
 
 Read `REPRODUCE.md`'s "What reproduction does and does not establish" section before
 comparing numbers.
@@ -131,6 +131,19 @@ comparing numbers.
 Out of scope here: `REPRODUCE.md`'s optional cross-backend PostgreSQL arm references a
 result artifact this repository does not freeze; the harness flag exists, but that arm
 is not part of this repository's claims.
+
+## Enterprise data adapter
+
+A separate, self-contained proof: a real anonymized recruitment corpus on hosted **Neon
+PostgreSQL**, taken through a typed ingestion contract → pgvector + cross-encoder
+retrieval → a frozen evaluation → a **deterministic governance gate** → an append-only
+**audit record**. The gate turns the eval contract's citability rule into an executable
+verdict (PROMOTED / BLOCKED) — and ships one of each, frozen and hash-manifested. It is
+reproducible against your own Postgres with one command and no Neon access.
+
+→ [`enterprise-adapter/README.md`](enterprise-adapter/README.md). Status: **validated
+implementation**; aggregate metrics only, no raw candidate rows, scope and standing
+prohibitions stated on the page.
 
 ## What is excluded, and why
 

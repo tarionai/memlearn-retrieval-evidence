@@ -17,6 +17,10 @@ time from the private origin tree; regenerate-and-diff to verify nothing drifted
   per class from the private `tests/unit/test_services.py`, whose remaining classes test
   the private memory kernel. Disclosed in the file's docstring.
 - `authored-for-this-repo` — scaffolding written for this repository; no private origin.
+- `vendored-from-mem-learn` — under `enterprise-adapter/evidence/`: copied verbatim from
+  the private `apps/mem-learn/` candidate-search benchmark pack (the frozen eval report and
+  the Neon ingestion-lineage report). Aggregate metrics and lineage only — no raw candidate
+  rows. See `enterprise-adapter/README.md`.
 
 The files under `packet/results/` additionally verify against the packet's own
 `packet/results/SHA256SUMS.txt` (checked at assembly time). Internal work-package
@@ -30,11 +34,29 @@ This manifest lists every tracked file except itself.
 | `.github/workflows/tests.yml` | authored-for-this-repo | `41e5f38cb0c276f812b25bdb11b14191a71dbcd6aa6bbf4154d7d27dfef0f4ba` |
 | `.gitignore` | authored-for-this-repo | `da65561049dbd51446a74d9d25444ed6c44a8879ea3b5edc04e1c2e26c45f4a0` |
 | `LICENSE` | authored-for-this-repo | `cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30` |
-| `README.md` | authored-for-this-repo | `a6bd2e40961dd365df116503f2b9ab3a5a8b71adb7844f0a0493a258248ed3f0` |
+| `README.md` | authored-for-this-repo | `614178a963ff57c594442be7ce46a02b99233d14a0ddc476c7538e8a01ede5c8` |
 | `benchmarks/__init__.py` | byte-identical-to-origin | `e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855` |
 | `benchmarks/retrieval_ablation/__init__.py` | byte-identical-to-origin | `e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855` |
 | `benchmarks/retrieval_ablation/metrics.py` | byte-identical-to-origin | `0e924cb73841ac8949e1a4e3dac28ac60c40bdc1bbe47efa4a927c8a9e65de21` |
 | `benchmarks/retrieval_ablation/tournament_base.py` | public-slice | `08279d06f0bc74e63f475d15e30562a04bf7bebe5743423f8895a31a857c9dc5` |
+| `enterprise-adapter/README.md` | authored-for-this-repo | `9829f0f353996069796d7a8c1ecf25a33fbd2d3c9c97fb3f4968892149f2db85` |
+| `enterprise-adapter/enterprise_adapter/__init__.py` | authored-for-this-repo | `513400d51183c9a6664094cdd9bfd37e7e8a742efbc721725e81f1f5d5e86579` |
+| `enterprise-adapter/enterprise_adapter/audit.py` | authored-for-this-repo | `a74d8ca3eb94d22067faf1d9dc4c7004ae41dbd5fb6400dc81659c17f3d4ead1` |
+| `enterprise-adapter/enterprise_adapter/decision.py` | authored-for-this-repo | `da12d146c5c8d4c0db6bcdc46d9f251a3c598ff08d7a41f2cf51860aa2574a95` |
+| `enterprise-adapter/enterprise_adapter/gate.py` | authored-for-this-repo | `ab2539b9a3566cd0522e5c5955f09c948bf5732c13a4016d424edcf997db84b7` |
+| `enterprise-adapter/evidence/SHA256SUMS.txt` | authored-for-this-repo | `27c2cb52d4610479cefc506d36b78938450b38eac08c692a97c84f2c4a463eb6` |
+| `enterprise-adapter/evidence/audit_log.jsonl` | authored-for-this-repo | `2a564996187cc4f1257cbaf74641cd962154c1a9e768d2068bd92ad313e44a36` |
+| `enterprise-adapter/evidence/candidate_search_eval_report.json` | vendored-from-mem-learn | `becb14043f3f1285312008a08dd81d890d7defd4c9a5b63dc73118c46768814f` |
+| `enterprise-adapter/evidence/governed_output_blocked.json` | authored-for-this-repo | `fb443296d60f850371ac7cf47f23a243e38b48f5b457b99502347c02b812937b` |
+| `enterprise-adapter/evidence/governed_output_promoted.json` | authored-for-this-repo | `c6e159ac2668fbca125901a2356e4992f025793c629ee4c28da81e66328be266` |
+| `enterprise-adapter/evidence/neon_load_report.json` | vendored-from-mem-learn | `790f92d53262b66234b600a58e1bf5a63f5bb1fd3b6aad9a501b8ccfc893e7b1` |
+| `enterprise-adapter/freeze_examples.py` | authored-for-this-repo | `39ec124f0c8df73c83eb72c800d3843ae251adb839cc46bdd06ce09ba48190c3` |
+| `enterprise-adapter/reproduction/.gitignore` | authored-for-this-repo | `769dc5978c09d6952391a007797c38a9bc896d192e03c4434ae2f7cff5381508` |
+| `enterprise-adapter/reproduction/repro_metrics.py` | authored-for-this-repo | `1b6ea0b8aeedcb72e17b0ceb20a01966508daf4875dc5a80c02d2c2bed316ee3` |
+| `enterprise-adapter/reproduction/reproduce.py` | authored-for-this-repo | `d0d3c609a131f97265d60344d819bbcec24ac2efaca48959c089cd60912b5058` |
+| `enterprise-adapter/reproduction/synthetic_corpus.json` | authored-for-this-repo | `535d7993f5121cec0b64fca4cbb3d1d6dae8be1ddf30d7faa166cc03add88754` |
+| `enterprise-adapter/tests/test_audit.py` | authored-for-this-repo | `0c72e42a17effb2b307da1de0969bf7e5a0b172597010be4cf1c86af280e3c5f` |
+| `enterprise-adapter/tests/test_gate.py` | authored-for-this-repo | `894eb8837c9e24cb01a86fa7ec15f3d0861e1d2af3d048b83f1a01ac593e1422` |
 | `packet/DATASET.md` | byte-identical-to-origin | `9df0e953aca07bd348ed86bed804f3f459c4c6f59aa9289291180127f59cf068` |
 | `packet/ENVIRONMENT.md` | byte-identical-to-origin | `544e6e4eb6b441ba486b8840a2f64842fc293644182a35a50d8f94575b991c34` |
 | `packet/EVAL_CONTRACT.md` | byte-identical-to-origin | `ce8ed78697c6546cb744eb900aaeffbbb55239cb3058c5367fbe8a4ba62fde09` |
@@ -53,7 +75,7 @@ This manifest lists every tracked file except itself.
 | `packet/results/osam_selection_postmortem_20260604.md` | byte-identical-to-origin | `6d51d78f38402f8ac92c1b757775c105567298603e1c0658f301eac4275ea7ec` |
 | `packet/results/ppr_arm_findings_20260604.md` | byte-identical-to-origin | `d8d2be8392136354c2f02ae74078efb61ba804e1dc986a65a82f6b657ceabc45` |
 | `packet/results/ppr_arm_results_n200.json` | byte-identical-to-origin | `73e1481e6b56678bd8f2a5b59a2029870a260001b97ac77829ef76faf2acfe8e` |
-| `pyproject.toml` | authored-for-this-repo | `f07fafb787a8cd7c68aee44e4c848411af4c53f9ba92d9288306331d76f0a971` |
+| `pyproject.toml` | authored-for-this-repo | `10fe22a58247bab143876df78f20a8184ffe044003d9612f413d2201d55a06e6` |
 | `src/memlearn/__init__.py` | byte-identical-to-origin | `d0cab45a830b4d7e87804ed6ab46ca3116194f889cb551a05f231da9f08ba49c` |
 | `src/memlearn/adapters/__init__.py` | byte-identical-to-origin | `e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855` |
 | `src/memlearn/adapters/in_memory/__init__.py` | byte-identical-to-origin | `ec50b22ca594f91e017da0af3766516c8bea328bf9fbf4bb19617cde2112864c` |

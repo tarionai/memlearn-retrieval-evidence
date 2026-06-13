@@ -3,8 +3,8 @@
 # reproduction commands in packet/REPRODUCE.md run from the repo root
 # without any install step beyond packet/requirements.lock.txt.
 [tool.pytest.ini_options]
-pythonpath = ["src", "."]
-testpaths = ["tests"]
+pythonpath = ["src", ".", "enterprise-adapter"]
+testpaths = ["tests", "enterprise-adapter/tests"]
 # tests/unit/test_in_memory_adapters.py ships byte-identical to its private
 # origin. Two groups are deselected so the default suite needs only
 # pytest + numpy — no private modules, no model downloads, no network:

@@ -1,0 +1,52 @@
+{
+  "dataset_version": "synthetic_v0",
+  "note": "Fully synthetic profiles. No djinni or third-party recruitment data. Hand-authored to exercise the ingest -> retrieve -> eval -> gate -> audit chain against a reviewer's own Postgres using native full-text search. Skill phrases are generic; candidate ids are sequential placeholders.",
+  "candidates": [
+    {"candidate_id": "cand_001", "profile_text": "Platform engineer. Kubernetes cluster administration, RBAC, namespace isolation. Terraform module authoring and remote state ownership. Helm, ArgoCD, GitOps. AWS and GCP."},
+    {"candidate_id": "cand_002", "profile_text": "Senior DevOps. Kubernetes operator development, Terraform infrastructure as code, Helm chart maintainer. CI/CD pipelines with ArgoCD. Azure and AWS deployments."},
+    {"candidate_id": "cand_003", "profile_text": "Site reliability engineer. Kubernetes RBAC and namespace policy. Prometheus, Grafana observability. Some Terraform usage, no module ownership. GCP."},
+    {"candidate_id": "cand_004", "profile_text": "Cloud platform engineer. Terraform module authoring, state management, Kubernetes administration, Helm packaging. ArgoCD continuous delivery. AWS."},
+    {"candidate_id": "cand_005", "profile_text": "Infrastructure engineer. Ansible configuration management, some Kubernetes exposure, Jenkins pipelines. No Terraform ownership. On-premise data centers."},
+    {"candidate_id": "cand_006", "profile_text": "Frontend developer. React, TypeScript, CSS, accessibility. No infrastructure or cloud platform experience."},
+    {"candidate_id": "cand_007", "profile_text": "QA automation engineer. Selenium WebDriver, Playwright, Cypress end-to-end test suites. Python pytest framework. CI integration. Test plan authoring."},
+    {"candidate_id": "cand_008", "profile_text": "Software engineer in test. Playwright and pytest automation, API contract testing, flaky-test triage. Continuous integration with GitHub Actions."},
+    {"candidate_id": "cand_009", "profile_text": "Manual QA analyst. Test case design, exploratory testing, bug reporting. Some Selenium scripting. No framework ownership."},
+    {"candidate_id": "cand_010", "profile_text": "Automation lead. Cypress and Playwright frameworks, pytest, test infrastructure ownership, parallel execution, CI pipelines. Mentoring."},
+    {"candidate_id": "cand_011", "profile_text": "QA engineer. pytest unit and integration tests, REST API testing with requests, basic Selenium. CI with Jenkins."},
+    {"candidate_id": "cand_012", "profile_text": "Backend engineer. PostgreSQL schema design, query optimization, indexing, partitioning. Python and Go services. Connection pooling, pgbouncer."},
+    {"candidate_id": "cand_013", "profile_text": "Senior backend developer. PostgreSQL performance tuning, EXPLAIN ANALYZE, GIN and BTREE indexes, materialized views. Python FastAPI. Redis caching."},
+    {"candidate_id": "cand_014", "profile_text": "Database engineer. PostgreSQL replication, logical decoding, partitioning, query plans. PL/pgSQL. Some Python. High-availability clusters."},
+    {"candidate_id": "cand_015", "profile_text": "Full-stack engineer. Node.js, React, MongoDB. Some PostgreSQL usage for reporting. No deep query optimization."},
+    {"candidate_id": "cand_016", "profile_text": "Data engineer. ETL pipelines, Airflow, Spark, PostgreSQL and Snowflake warehouses. Python. dbt transformations."},
+    {"candidate_id": "cand_017", "profile_text": "Backend engineer. PostgreSQL indexing and query optimization, partitioning, connection pooling. Go microservices. gRPC."},
+    {"candidate_id": "cand_018", "profile_text": "Platform engineer. Kubernetes administration, Terraform modules, Helm, ArgoCD. PostgreSQL operator deployment. AWS EKS."},
+    {"candidate_id": "cand_019", "profile_text": "Mobile developer. Swift, Kotlin, iOS and Android apps. No backend, database, or infrastructure focus."},
+    {"candidate_id": "cand_020", "profile_text": "Security engineer. Threat modeling, penetration testing, RBAC review. Some Kubernetes policy work. No Terraform module ownership."},
+    {"candidate_id": "cand_021", "profile_text": "DevOps engineer. Terraform infrastructure as code, module authoring, Kubernetes RBAC, Helm. GitOps with ArgoCD. Multi-cloud AWS GCP."},
+    {"candidate_id": "cand_022", "profile_text": "Test automation engineer. Playwright, Cypress, pytest, visual regression testing, CI pipeline ownership. Test data management."},
+    {"candidate_id": "cand_023", "profile_text": "Backend engineer. PostgreSQL query optimization, advisory locks, partitioning, JSONB indexing. Python Django. Celery task queues."},
+    {"candidate_id": "cand_024", "profile_text": "Product manager. Roadmap planning, stakeholder management, analytics. No engineering implementation."},
+    {"candidate_id": "cand_025", "profile_text": "Junior platform engineer. Learning Kubernetes and Terraform. Helm basics. AWS associate certified. Limited production ownership."},
+    {"candidate_id": "cand_026", "profile_text": "QA automation engineer. Selenium, Playwright, pytest, BDD with behave, CI with GitLab. Performance testing with Locust."},
+    {"candidate_id": "cand_027", "profile_text": "Backend engineer. PostgreSQL schema and indexing, query tuning, read replicas. Python Flask. Some Kubernetes deployment."},
+    {"candidate_id": "cand_028", "profile_text": "Data analyst. SQL reporting, dashboards, Tableau. Basic PostgreSQL queries. No schema or performance work."},
+    {"candidate_id": "cand_029", "profile_text": "Platform engineer. Kubernetes administration, RBAC, network policy, Terraform module authoring and state ownership, Helm, ArgoCD. GCP GKE."},
+    {"candidate_id": "cand_030", "profile_text": "Backend and platform engineer. PostgreSQL optimization, partitioning, Kubernetes deployment, Terraform. Python and Go. End-to-end ownership."}
+  ],
+  "queries": [
+    {"query_id": "platform_engineer_v1", "family": "noisy_disambiguation", "query_text": "platform engineer kubernetes administration terraform module authoring state ownership helm argocd"},
+    {"query_id": "qa_auto_v1", "family": "single_position", "query_text": "qa automation engineer playwright pytest cypress end to end test framework continuous integration"},
+    {"query_id": "backend_postgres_v1", "family": "tech_specific_precision", "query_text": "backend engineer postgresql query optimization indexing partitioning connection pooling"}
+  ],
+  "qrels": {
+    "platform_engineer_v1": {"cand_001": 2, "cand_002": 2, "cand_004": 2, "cand_021": 2, "cand_029": 2, "cand_018": 1, "cand_003": 1, "cand_025": 1, "cand_030": 1, "cand_005": 0, "cand_020": 0},
+    "qa_auto_v1": {"cand_007": 2, "cand_010": 2, "cand_022": 2, "cand_026": 2, "cand_008": 1, "cand_011": 1, "cand_009": 0},
+    "backend_postgres_v1": {"cand_012": 2, "cand_013": 2, "cand_017": 2, "cand_023": 2, "cand_014": 1, "cand_027": 1, "cand_030": 1, "cand_016": 1, "cand_015": 0, "cand_028": 0}
+  },
+  "claim_boundaries": [
+    {"claim": "The synthetic adapter executes candidate-profile retrieval over a Postgres full-text index", "status": "Demonstrable"},
+    {"claim": "PostgreSQL native lexical retrieval can be evaluated against frozen synthetic qrels", "status": "Demonstrable"},
+    {"claim": "This synthetic run reflects production retrieval quality", "status": "Not validated"},
+    {"claim": "PostgreSQL native FTS is BM25", "status": "False; do not claim"}
+  ]
+}

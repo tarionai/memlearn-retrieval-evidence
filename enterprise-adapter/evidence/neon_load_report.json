@@ -1,0 +1,31 @@
+{
+  "postgres_version": "PostgreSQL 18.4 (72c6e7c) on aarch64-unknown-linux-gnu, compiled by gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0, 64-bit",
+  "pgvector_version": "not_installed",
+  "schema_version": "001",
+  "dataset_version": "djinni_v0",
+  "source_candidate_count": 20000,
+  "loaded_candidate_count": 20000,
+  "source_job_count": 24,
+  "query_count": 24,
+  "index_names": [
+    "candidate_profiles_search_vector_gin_idx",
+    "candidate_embeddings_hnsw_cosine_idx",
+    "query_embeddings_hnsw_cosine_idx"
+  ],
+  "index_sizes": {
+    "candidate_profiles_search_vector_gin_idx": "error",
+    "candidate_embeddings_hnsw_cosine_idx": "error",
+    "query_embeddings_hnsw_cosine_idx": "error"
+  },
+  "load_started_at": "2026-06-06T18:12:09.112421+00:00",
+  "load_completed_at": "2026-06-06T18:41:35.019177+00:00",
+  "git_commit": "c8bca61",
+  "embedding_count": 20000,
+  "profiles_chunked_count": 6082,
+  "chunk_strategy": "mean_pool",
+  "chunk_size": 256,
+  "chunk_stride": 128,
+  "model_id": "all-MiniLM-L6-v2",
+  "embedding_dimension": 384,
+  "chunk_max_tokens": 256
+}
