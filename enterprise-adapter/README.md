@@ -154,14 +154,20 @@ against **your own** Postgres, using fully synthetic profiles (`reproduction/syn
 gate and audit writer are the same published modules; only the corpus and retrieval arm are
 swapped for a dependency-free local stand-in.
 
+The only external dependency is `psycopg2-binary`; everything else is the Python standard
+library plus the published adapter modules.
+
 ```bash
-# 1. start any Postgres (throwaway container shown; or point REPRO_PG_CONN at your own)
+# 1. install the one dependency (use a fresh venv if you prefer)
+pip install psycopg2-binary
+
+# 2. start any Postgres (throwaway container shown; or point REPRO_PG_CONN at your own)
 docker run --rm -d --name repro-pg -e POSTGRES_PASSWORD=postgres -p 5432:5432 postgres:16
 
-# 2. run the chain
+# 3. run the chain
 python enterprise-adapter/reproduction/reproduce.py
 
-# 3. tear down
+# 4. tear down
 docker rm -f repro-pg
 ```
 
