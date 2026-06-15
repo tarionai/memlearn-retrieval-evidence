@@ -2,6 +2,8 @@
 
 **Status: validated implementation — benchmark harness + frozen evidence packet.**
 
+> **Latest release:** [`enterprise-adapter-v1`](https://github.com/tarionai/memlearn-retrieval-evidence/releases/tag/enterprise-adapter-v1) — the enterprise data adapter, frozen and citable by tag. See [§ Enterprise data adapter](#enterprise-data-adapter) below.
+
 A curated public excerpt of a private memory-retrieval system: its typed contracts,
 contract tests, a frozen LongMemEval-S evidence packet, and a runnable benchmark harness
 for independent protocol-level reproduction. The packet includes bootstrap 95% CIs and
@@ -144,6 +146,8 @@ reproducible against your own Postgres with one command and no Neon access.
 → [`enterprise-adapter/README.md`](enterprise-adapter/README.md). Status: **validated
 implementation**; aggregate metrics only, no raw candidate rows, scope and standing
 prohibitions stated on the page.
+
+**Release:** [`enterprise-adapter-v1`](https://github.com/tarionai/memlearn-retrieval-evidence/releases/tag/enterprise-adapter-v1) — a frozen, hash-manifested snapshot you can cite by tag (the resume/portfolio link points here).
 
 ## What is excluded, and why
 
