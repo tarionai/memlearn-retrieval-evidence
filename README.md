@@ -2,7 +2,9 @@
 
 **Status: validated implementation — benchmark harness + frozen evidence packet.**
 
-> **Latest release:** [`enterprise-adapter-v1`](https://github.com/tarionai/memlearn-retrieval-evidence/releases/tag/enterprise-adapter-v1) — the enterprise data adapter, frozen and citable by tag. See [§ Enterprise data adapter](#enterprise-data-adapter) below.
+> **Latest release:** [`governed-agent-v1`](https://github.com/tarionai/memlearn-retrieval-evidence/releases/tag/governed-agent-v1) — a LangGraph state graph + MCP server over the adapter chain, reusing the same deterministic gate + audit verbatim. See [§ Governed retrieval agent](#governed-retrieval-agent) below.
+>
+> Prior release: [`enterprise-adapter-v1`](https://github.com/tarionai/memlearn-retrieval-evidence/releases/tag/enterprise-adapter-v1) — the enterprise data adapter, frozen and citable by tag. See [§ Enterprise data adapter](#enterprise-data-adapter).
 
 A curated public excerpt of a private memory-retrieval system: its typed contracts,
 contract tests, a frozen LongMemEval-S evidence packet, and a runnable benchmark harness
@@ -148,6 +150,27 @@ implementation**; aggregate metrics only, no raw candidate rows, scope and stand
 prohibitions stated on the page.
 
 **Release:** [`enterprise-adapter-v1`](https://github.com/tarionai/memlearn-retrieval-evidence/releases/tag/enterprise-adapter-v1) — a frozen, hash-manifested snapshot you can cite by tag (the resume/portfolio link points here).
+
+## Governed retrieval agent
+
+A runnable agent layer over the adapter chain: the same deterministic gate and
+append-only audit, reused **verbatim**, wrapped in two artifacts. (1) An explicit
+**LangGraph** state graph — typed state, a SQLite checkpointer for durable
+execution, a retry policy on the database nodes, and a verdict-conditional **safe
+fallback** to a first-class BLOCKED terminal that still writes an audit line;
+when the database is unreachable after retries the graph fails closed onto that
+same terminal. (2) A real **MCP server** exposing three well-typed tools, with
+the audit id in every return and no raw candidate rows or connection string ever
+leaked. Two modes share one graph: a cold-reproducible deterministic mode, and
+an optional agentic mode where an LLM proposes claims and the deterministic gate
+disposes.
+
+→ [`governed-agent/README.md`](governed-agent/README.md). Status: **runnable
+artifacts**; deterministic mode is hash-frozen under `governed-agent/evidence/`
+(`sha256sum -c SHA256SUMS.txt`) and covered by an 8-test suite (database-backed
+tests skip cleanly without Postgres).
+
+**Release:** [`governed-agent-v1`](https://github.com/tarionai/memlearn-retrieval-evidence/releases/tag/governed-agent-v1) — a frozen snapshot you can cite by tag.
 
 ## What is excluded, and why
 
