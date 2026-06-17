@@ -1,0 +1,7 @@
+.venv/
+__pycache__/
+*.pyc
+_output/
+*.egg-info/
+checkpoints.sqlite
+checkpoints.sqlite-*

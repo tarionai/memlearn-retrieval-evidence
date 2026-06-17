@@ -1,0 +1,18 @@
+{
+  "allowed_claims": [],
+  "decision": "BLOCKED",
+  "draft": null,
+  "failed_condition": "requested claim is not citable: 'The system improves recruiter satisfaction in production'",
+  "forbidden_claims": [
+    "The system improves recruiter satisfaction in production",
+    "The system predicts interview or hiring success",
+    "The system has been validated for fairness or bias",
+    "PostgreSQL native FTS is BM25"
+  ],
+  "lineage": {
+    "dataset_version": "djinni_v0",
+    "embedding_model_id": "all-MiniLM-L6-v2",
+    "eval_run_id": "1554d517",
+    "git_commit": "28c16a9"
+  }
+}
