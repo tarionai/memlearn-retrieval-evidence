@@ -13,7 +13,8 @@ two negative findings. It is deliberately small. It is not the product — the m
 
 Companion surface: the same packet is served at
 [relevance.tarion.ai](https://relevance.tarion.ai/#benchmark-packet); the SHA-256 hashes
-in [`MANIFEST.md`](MANIFEST.md) tie both copies to identical bytes.
+in [`MANIFEST.md`](MANIFEST.md) tie both copies to identical bytes. Project write-up:
+[tarion.ai/projects/search-relevance-evidence](https://www.tarion.ai/projects/search-relevance-evidence).
 
 ## Key result
 
